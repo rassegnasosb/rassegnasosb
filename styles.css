@@ -216,3 +216,44 @@ footer {
         padding: 3rem 1.5rem;
     }
 }
+
+/* SCRITTE SU HEADER */
+/* HEADER RASSEGNA */
+
+.hero-header {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titolo {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.manifesto {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.manifesto strong {
+  font-weight: 700;
+}
+
+.categorie {
+  font-size: 1em;
+  letter-spacing: 0.08em;
+}
+
+.verde {
+  font-weight: 700;
+  color: #2E7D32;
+}
