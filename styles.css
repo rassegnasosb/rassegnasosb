@@ -259,62 +259,43 @@ footer {
 }
 
 */ STEMMI */
-/* ==============================
-   Comuni Affiliati - Stemmi
-============================== */
 .stemmi-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    display: flex; /* da grid a flex per contenere solo ciò che serve */
+    flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 2rem;
-    justify-items: center;
+    justify-content: center; /* centra gli stemmi */
     align-items: center;
+    margin-top: 2rem;
 }
 
 .stemma-comune {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block; /* dimensiona il contenitore sul quadrato */
+    width: 100px;  /* uguale all’immagine */
+    height: 100px; /* uguale all’immagine */
     cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
 .stemma-comune img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* riempie il contenitore quadrato */
     border-radius: 12px;
     border: 1px solid #ddd;
-    padding: 0.5rem;
     background: #fff;
 }
 
-.stemma-comune p {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #333;
-}
-
-/* Effetto hover */
+/* Hover solo sul quadrato */
 .stemma-comune:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .stemmi-container {
-        gap: 1.5rem;
-    }
-
-    .stemma-comune img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .stemma-comune p {
-        font-size: 0.85rem;
-    }
+/* Nome del comune sotto l’immagine */
+.stemma-comune p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
 }
