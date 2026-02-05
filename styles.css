@@ -257,3 +257,64 @@ footer {
   font-weight: 700;
   color: #2E7D32;
 }
+
+*/ STEMMI */
+/* ==============================
+   Comuni Affiliati - Stemmi
+============================== */
+.stemmi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.stemma-comune {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.stemma-comune img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    background: #fff;
+}
+
+.stemma-comune p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Effetto hover */
+.stemma-comune:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stemmi-container {
+        gap: 1.5rem;
+    }
+
+    .stemma-comune img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .stemma-comune p {
+        font-size: 0.85rem;
+    }
+}
