@@ -1,4 +1,6 @@
-/* Reset base */
+/* ==============================
+   Reset base
+============================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +8,19 @@
     font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Body */
+/* ==============================
+   Body
+============================== */
 body {
     background: #fef9f3;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* evita scroll orizzontale */
 }
 
-/* Header */
+/* ==============================
+   Header
+============================== */
 header {
     position: fixed;
     top: 0;
@@ -114,46 +121,59 @@ header {
     color: #a85c40;
 }
 
-/* Hero section */
+/* ==============================
+   Hero Section full-width
+============================== */
 .hero {
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 2rem;
-    background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo sfumato */
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro per desktop */
     position: relative;
     color: #fff;
+    overflow: hidden;
 }
 
 .hero::after {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.15); /* overlay leggero per contrasto testo */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25); /* overlay leggero */
     z-index: 1;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 900px;
+    padding: 0 1rem;
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
     margin-bottom: 1rem;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #fdfdfd;
 }
 
-/* Sections */
+/* ==============================
+   Sections
+============================== */
 section {
     padding: 5rem 2rem;
     max-width: 900px;
@@ -166,7 +186,9 @@ section h2 {
     color: #333;
 }
 
-/* Footer */
+/* ==============================
+   Footer
+============================== */
 footer {
     padding: 2rem;
     text-align: center;
@@ -175,12 +197,22 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-/* Responsive */
-@media(max-width:768px){
-    .hero-text h1{
-        font-size:1.8rem;
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
     }
-    .hero-text p{
-        font-size:1rem;
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro su mobile */
+    }
+
+    section {
+        padding: 3rem 1.5rem;
     }
 }
