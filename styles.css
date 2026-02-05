@@ -72,11 +72,27 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
 }
 
 .nav-menu.active {
     right: 0;
+    opacity: 1;
+}
+
+/* Tasto chiudi X */
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+#close-menu:hover {
+    color: #a85c40; /* accento ruggine */
 }
 
 .nav-menu ul {
