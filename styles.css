@@ -258,46 +258,58 @@ footer {
   color: #2E7D32;
 }
 
-*/ STEMMI */
+/* ==============================
+   STEMMI COMUNI
+============================== */
+
 .stemmi-container {
-    display: flex; /* da grid a flex per contenere solo ciò che serve */
+    display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center; /* centra gli stemmi */
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 2rem;
 }
 
 .stemma-comune {
-    display: inline-block; /* dimensiona il contenitore sul quadrato */
-    width: 100px;  /* uguale all’immagine */
-    height: 100px; /* uguale all’immagine */
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    overflow: hidden; /* fondamentale */
+    background: #fff;
+    border: 1px solid #ddd;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stemma-comune img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* riempie il contenitore quadrato */
-    border-radius: 12px;
-    border: 1px solid #ddd;
+    object-fit: contain;
+    padding: 10px;
     background: #fff;
 }
 
-/* Hover solo sul quadrato */
-.stemma-comune:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* Nome del comune DENTRO il quadrato */
+.nome-comune {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55); /* fascia leggibile */
+    letter-spacing: 0.02em;
 }
 
-/* Nome del comune sotto l’immagine */
-.stemma-comune p {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #333;
+/* Hover elegante */
+.stemma-comune:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* ==============================
