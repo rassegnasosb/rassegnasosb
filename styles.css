@@ -132,7 +132,10 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0;
+    padding-top: 100px; /* <-- PADDING TOP */
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
     margin: 0;
     background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro per desktop */
     position: relative;
