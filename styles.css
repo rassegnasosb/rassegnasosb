@@ -299,3 +299,36 @@ footer {
     font-weight: 500;
     color: #333;
 }
+
+/* ==============================
+   HEADER LOGO LAYOUT
+============================== */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo cliccabile */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Immagine logo */
+.logo-img {
+    height: 60px;      /* dimensione elegante */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo-img {
+    transform: scale(1.05); /* micro-interazione sobria */
+}
+
+/* Testo accanto al logo */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
