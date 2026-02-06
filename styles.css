@@ -127,14 +127,14 @@ header {
 .hero {
     width: 100%;
     max-width: 100%;
-    height: calc(100vh - 100px); /* altezza viewport meno header desktop */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 100px; /* spazio per l’header fisso */
+    padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro desktop */
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro per desktop */
     position: relative;
     color: #fff;
     overflow: hidden;
@@ -169,25 +169,6 @@ header {
 .hero-text p {
     font-size: 1.3rem;
     color: #fdfdfd;
-}
-
-/* ==============================
-   Responsive Hero Section
-============================== */
-@media (max-width: 768px) {
-    .hero {
-        height: calc(100vh - 120px); /* altezza viewport meno header mobile */
-        padding-top: 120px;          /* spazio per l’header fisso mobile */
-        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro mobile */
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
 }
 
 /* ==============================
