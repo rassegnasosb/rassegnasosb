@@ -472,3 +472,23 @@ footer {
         font-size: 1.3rem;
     }
 }
+
+/* ==============================
+   LOGO NEL MENU
+============================== */
+
+.menu-logo {
+    margin-bottom: 2.5rem;
+}
+
+.menu-logo img {
+    width: 140px;
+    height: auto;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-logo img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
