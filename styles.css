@@ -9,13 +9,20 @@
 }
 
 /* ==============================
+   Variabili globali
+============================== */
+:root {
+    --header-height: 96px;
+}
+
+/* ==============================
    Body
 ============================== */
 body {
     background: #fef9f3;
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* evita scroll orizzontale */
+    overflow-x: hidden;
 }
 
 /* ==============================
@@ -24,7 +31,9 @@ body {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    height: var(--header-height);
     background: rgba(254, 249, 243, 0.95);
     display: flex;
     justify-content: space-between;
@@ -34,12 +43,9 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* Hamburger */
+/* ==============================
+   Hamburger
+============================== */
 .hamburger {
     cursor: pointer;
     width: 30px;
@@ -56,17 +62,9 @@ header {
     transition: all 0.4s ease;
 }
 
-.hamburger.active .line1 {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active .line2 {
-    opacity: 0;
-}
-.hamburger.active .line3 {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Nav menu */
+/* ==============================
+   Nav menu
+============================== */
 .nav-menu {
     position: fixed;
     top: 0;
@@ -80,6 +78,7 @@ header {
     align-items: center;
     transition: right 0.3s ease, opacity 0.3s ease;
     opacity: 0;
+    z-index: 999;
 }
 
 .nav-menu.active {
@@ -87,76 +86,41 @@ header {
     opacity: 1;
 }
 
-/* Tasto chiudi X */
-#close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.3s;
-}
-#close-menu:hover {
-    color: #a85c40;
-}
-
-.nav-menu ul {
-    list-style: none;
-    text-align: center;
-}
-
-.nav-menu li {
-    margin: 1.5rem 0;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #a85c40;
-}
-
 /* ==============================
-   Hero Section full-width
+   HERO — FULL WIDTH
 ============================== */
 .hero {
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: calc(var(--header-height) + 3rem);
+    padding-bottom: 4rem;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro per desktop */
+    align-items: flex-start; /* 🔑 NON center */
+
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
     position: relative;
     color: #fff;
     overflow: hidden;
 }
 
+/* Overlay */
 .hero::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.25); /* overlay leggero */
+    inset: 0;
+    background: rgba(0,0,0,0.25);
     z-index: 1;
 }
 
+/* Contenuto hero */
 .hero-text {
     position: relative;
     z-index: 2;
     max-width: 900px;
     padding: 0 1rem;
+    text-align: center;
 }
 
 .hero-text h1 {
@@ -168,335 +132,11 @@ header {
 
 .hero-text p {
     font-size: 1.3rem;
-    color: #fdfdfd;
 }
 
 /* ==============================
-   Sections
+   Hero image
 ============================== */
-section {
-    padding: 5rem 2rem;
-    max-width: 900px;
-    margin: auto;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-/* ==============================
-   Footer
-============================== */
-footer {
-    padding: 2rem;
-    text-align: center;
-    background: rgba(254, 249, 243, 0.95);
-    color: #555;
-    border-top: 1px solid #ddd;
-}
-
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .hero {
-        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro su mobile */
-    }
-
-    section {
-        padding: 3rem 1.5rem;
-    }
-}
-
-/* SCRITTE SU HEADER */
-/* HEADER RASSEGNA */
-
-.hero-header {
-  width: 100%;
-  padding: 3rem 1.5rem;
-  text-transform: uppercase;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.titolo {
-  font-size: 1.2em;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.manifesto {
-  font-size: 1em;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
-}
-
-.manifesto strong {
-  font-weight: 700;
-}
-
-.categorie {
-  font-size: 1em;
-  letter-spacing: 0.08em;
-}
-
-.verde {
-  font-weight: 700;
-  color: #2E7D32;
-}
-
-/* ==============================
-   STEMMI COMUNI
-============================== */
-
-.stemmi-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 2rem;
-}
-
-.stemma-comune {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 14px;
-    overflow: hidden; /* fondamentale */
-    background: #fff;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stemma-comune img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 10px;
-    background: #fff;
-}
-
-/* Nome del comune DENTRO il quadrato */
-.nome-comune {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.4rem 0.3rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.55); /* fascia leggibile */
-    letter-spacing: 0.02em;
-}
-
-/* Hover elegante */
-.stemma-comune:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ==============================
-   HEADER LOGO LAYOUT
-============================== */
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Logo cliccabile */
-.logo-link {
-    display: inline-flex;
-    align-items: center;
-}
-
-/* Immagine logo */
-.logo-img {
-    height: 60px;      /* dimensione elegante */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo-img {
-    transform: scale(1.05); /* micro-interazione sobria */
-}
-
-/* Testo accanto al logo */
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==============================
-   ARCHIVIO – ANNI
-============================== */
-
-#archivio {
-    text-align: center;
-}
-
-.archivio-anni {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.anno {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #ffffff;
-
-    padding: 2.2rem 1rem;
-    border-radius: 18px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(95, 160, 211, 0.85),
-        rgba(120, 185, 230, 0.85)
-    );
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    cursor: default;
-
-    transition: transform 0.35s ease,
-                box-shadow 0.35s ease,
-                background 0.35s ease;
-}
-
-/* Hover poetico */
-.anno:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
-    background: linear-gradient(
-        135deg,
-        rgba(80, 145, 200, 0.95),
-        rgba(105, 170, 220, 0.95)
-    );
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .anno {
-        font-size: 1.3rem;
-        padding: 1.6rem 0.8rem;
-    }
-}
-
-/* ==============================
-   PAGINA CONTATTI
-============================== */
-
-#contatti {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.contatti-box {
-    margin-top: 3rem;
-    padding: 3rem 2rem;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 22px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.contatti-intro {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    color: #444;
-}
-
-.contatto-principale {
-    margin-bottom: 2rem;
-}
-
-.contatto-principale span {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.75rem;
-    color: #777;
-    margin-bottom: 0.4rem;
-}
-
-.contatto-principale a {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #5fa0d3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contatto-principale a:hover {
-    color: #3d82b8;
-}
-
-.contatti-note {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .contatti-box {
-        padding: 2rem 1.5rem;
-    }
-
-    .contatto-principale a {
-        font-size: 1.3rem;
-    }
-}
-
-/* ==============================
-   LOGO NEL MENU
-============================== */
-
-.menu-logo {
-    margin-bottom: 2.5rem;
-}
-
-.menu-logo img {
-    width: 140px;
-    height: auto;
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.menu-logo img:hover {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-/* ==============================
-   HERO IMMAGINE CIRCOLARE
-============================== */
-
 .hero-image {
     margin-top: 2rem;
     display: flex;
@@ -508,14 +148,62 @@ footer {
     height: 220px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 4px solid rgba(255,255,255,0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* Responsive */
+/* ==============================
+   Sections NORMALI (NON hero)
+============================== */
+section:not(.hero) {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+section:not(.hero) h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(254,249,243,0.95);
+    border-top: 1px solid #ddd;
+}
+
+/* ==============================
+   Responsive
+============================== */
 @media (max-width: 768px) {
+
+    :root {
+        --header-height: 88px;
+    }
+
+    .hero {
+        padding-top: calc(var(--header-height) + 2rem);
+        background: linear-gradient(to bottom, #87ceeb, #fef9f3);
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
     .hero-image img {
         width: 160px;
         height: 160px;
+    }
+
+    section:not(.hero) {
+        padding: 3rem 1.5rem;
     }
 }
