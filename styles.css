@@ -344,3 +344,63 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
+/* ==============================
+   ARCHIVIO – ANNI
+============================== */
+
+#archivio {
+    text-align: center;
+}
+
+.archivio-anni {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.anno {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+
+    padding: 2.2rem 1rem;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(95, 160, 211, 0.85),
+        rgba(120, 185, 230, 0.85)
+    );
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    cursor: default;
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+}
+
+/* Hover poetico */
+.anno:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    background: linear-gradient(
+        135deg,
+        rgba(80, 145, 200, 0.95),
+        rgba(105, 170, 220, 0.95)
+    );
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .anno {
+        font-size: 1.3rem;
+        padding: 1.6rem 0.8rem;
+    }
+}
