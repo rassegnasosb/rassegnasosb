@@ -404,3 +404,71 @@ footer {
         padding: 1.6rem 0.8rem;
     }
 }
+
+/* ==============================
+   PAGINA CONTATTI
+============================== */
+
+#contatti {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.contatti-box {
+    margin-top: 3rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.contatti-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: #444;
+}
+
+.contatto-principale {
+    margin-bottom: 2rem;
+}
+
+.contatto-principale span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    color: #777;
+    margin-bottom: 0.4rem;
+}
+
+.contatto-principale a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5fa0d3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contatto-principale a:hover {
+    color: #3d82b8;
+}
+
+.contatti-note {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contatti-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .contatto-principale a {
+        font-size: 1.3rem;
+    }
+}
