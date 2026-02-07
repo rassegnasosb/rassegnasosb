@@ -22,7 +22,7 @@ body {
    Header
 ============================== */
 header {
-    position: fixed;
+    position: static;
     top: 0;
     width: 100%;
     background: rgba(254, 249, 243, 0.95);
@@ -134,8 +134,8 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 160px;   /* <-- qui invece di padding-top */
-    padding: 0;          /* togli tutto il padding interno */
+    padding: 0;      /* nessun padding-top necessario */
+    margin: 0;       /* ok così */
     background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
     position: relative;
     color: #fff;
