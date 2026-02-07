@@ -124,22 +124,21 @@ header {
 }
 
 /* ==============================
-   Hero Section full-width
+   Hero Section full-width responsive
 ============================== */
 .hero {
     width: 100%;
-    max-width: 100%;
-    height: 100vh;
+    min-height: 100svh; /* altezza reale viewport su mobile */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 160px; /* <-- PADDING TOP */
+    padding-top: calc(60px + 2rem); /* altezza header + respiro */
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
     margin: 0;
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* cielo scuro per desktop */
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0); /* desktop */
     position: relative;
     color: #fff;
     overflow: hidden;
@@ -166,16 +165,51 @@ header {
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.8rem; /* GRANDEZZA TITOLO HERO TRE PUNTO DUE */
+    font-size: 3.8rem;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.5rem; /* GRANDEZZA SOTTOTITOLO HERO UNO PUNTO TRE */
+    font-size: 1.5rem;
     color: #fdfdfd;
 }
 
+/* ==============================
+   Mobile responsive
+============================== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100svh; /* assicura altezza reale su mobile verticale */
+        padding-top: calc(60px + 1.5rem); /* header più respiro minore */
+        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro su mobile */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+/* ==============================
+   Landscape mobile stretto
+============================== */
+@media (max-width: 768px) and (max-height: 500px) {
+    .hero {
+        padding-top: 80px; /* header ridotto + respiro */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+}
 /* ==============================
    Sections
 ============================== */
@@ -223,7 +257,6 @@ footer {
 }
 
 /* SCRITTE SU HEADER */
-/* HEADER RASSEGNA */
 
 .hero-header {
   width: 100%;
