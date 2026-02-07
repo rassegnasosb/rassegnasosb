@@ -22,7 +22,7 @@ body {
    Header
 ============================== */
 header {
-    position: static;
+    position: fixed;
     top: 0;
     width: 100%;
     background: rgba(254, 249, 243, 0.95);
