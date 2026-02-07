@@ -68,18 +68,19 @@ header {
 
 /* Nav menu */
 .nav-menu {
-    position: fixed;
+    position: fixed;   /* già c’è */
     top: 0;
     right: -100%;
     width: 70%;
-    height: 100dvh; /* viewport reale mobile */
+    height: 100dvh;
     background: rgba(254, 249, 243, 0.97);
+    z-index: 2000;     /* <-- assicurati sia più alto della hero */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* NON center */
-    padding-top: 120px; /* spazio header */
-    overflow-y: auto; /* <-- FONDAMENTALE */
+    justify-content: flex-start;
+    padding-top: 120px;
+    overflow-y: auto;
     transition: right 0.3s ease, opacity 0.3s ease;
     opacity: 0;
 }
