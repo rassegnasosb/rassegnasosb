@@ -164,13 +164,13 @@ header {
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
+    font-size: 3.8rem; /* GRANDEZZA TITOLO HERO TRE PUNTO DUE */
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* GRANDEZZA SOTTOTITOLO HERO UNO PUNTO TRE */
     color: #fdfdfd;
 }
 
