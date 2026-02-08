@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rassegna Senza Orario Senza Bandiera 2023 – L’amore per le vette</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- SOLO PER TEST: commenta se vuoi -->
+  <style>
+    body { font-family: 'Playfair Display', serif; }
+    .programma-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 0.1rem;
+    }
+    .evento-box {
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .evento-data {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .evento-titolo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .evento-comune {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Rassegna 2023</h1>
+    <p>L’amore per le vette declinato in 62 eventi</p>
+  </section>
+
+  <!-- INTRO -->
+  <section id="rassegna-2023">
+
+    <h2>L’amore per le vette declinato in 62 eventi proposti in sei mesi</h2>
+
+    <p style="font-style: italic;">
+      La 18ª edizione di <strong>Senza Orario Senza Bandiera</strong> è stata dedicata
+      alla montagna e ai suoi mille problemi.<br>
+      <small>Testo di Alessandra Dall’Igna</small>
+    </p>
+
+    <!-- NUMERI -->
+    <div class="programma-container">
+
+      <div class="evento-box">
+        <div class="evento-data counter" data-target="6">0</div>
+        <div>mesi di eventi</div>
+      </div>
+
+      <div class="evento-box">
+        <div class="evento-data counter" data-target="62">0</div>
+        <div>proposte culturali</div>
+      </div>
+
+      <div class="evento-box">
+        <div class="evento-data counter" data-target="50">0</div>
+        <div>enti coinvolti</div>
+      </div>
+
+      <div class="evento-box">
+        <div class="evento-data counter" data-target="25">0</div>
+        <div>comuni partecipanti</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EVENTI 2023 -->
+  <section id="eventi-2023">
+
+    <h2>Alcuni eventi dell’edizione 2023</h2>
+
+    <div class="programma-container">
+
+      <div class="evento-box">
+        <div class="evento-data">Giugno 2023</div>
+        <div class="evento-titolo">Oltre il sentiero</div>
+        <div class="evento-comune">Asiago</div>
+        <div>
+          Incontro con alpinisti e autori sul rapporto tra uomo, paesaggio e memoria.
+        </div>
+      </div>
+
+      <div class="evento-box">
+        <div class="evento-data">Luglio 2023</div>
+        <div class="evento-titolo">Montagna fragile</div>
+        <div class="evento-comune">Recoaro Terme</div>
+        <div>
+          Proiezione cinematografica e dialogo sui cambiamenti climatici in quota.
+        </div>
+      </div>
+
+      <div class="evento-box">
+        <div class="evento-data">Settembre 2023</div>
+        <div class="evento-titolo">Camminare lento</div>
+        <div class="evento-comune">Valdagno</div>
+        <div>
+          Racconti di viaggio, musica dal vivo e riflessioni sul paesaggio alpino.
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- JS CONTATORI – ULTRA SEMPLICE -->
+  <script>
+    window.onload = () => {
+      const counters = document.querySelectorAll('.counter');
+
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.target);
+        let current = 0;
+        const speed = 30;
+
+        const timer = setInterval(() => {
+          current++;
+          counter.textContent = current;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          }
+        }, speed);
+      });
+    };
+  </script>
+
+</body>
+</html>
