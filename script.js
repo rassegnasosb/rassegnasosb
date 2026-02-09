@@ -1,7 +1,7 @@
 // Carica header e footer dinamici
 document.addEventListener("DOMContentLoaded", () => {
     // Header
-    fetch('header.html')
+    fetch('/header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     // Footer
-    fetch('footer.html')
+    fetch('/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
