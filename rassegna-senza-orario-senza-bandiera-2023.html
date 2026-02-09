@@ -116,25 +116,43 @@
   <!-- Footer dinamico -->
   <div id="footer-placeholder"></div>
 
-  <!-- JS CONTATORI – ULTRA SEMPLICE -->
-  <script>
-    window.onload = () => {
-      const counters = document.querySelectorAll('.counter');
-      counters.forEach(counter => {
-        const target = Number(counter.dataset.target);
-        let current = 0;
-        const speed = 30;
-        const timer = setInterval(() => {
-          current++;
-          counter.textContent = current;
-          if (current >= target) {
-            counter.textContent = target;
-            clearInterval(timer);
-          }
-        }, speed);
-      });
-    };
-  </script>
+<script>
+  // Funzione per animare un singolo contatore
+  function animateCounter(counter) {
+    const target = Number(counter.dataset.target);
+    let current = 0;
+    const speed = 30;
+
+    const timer = setInterval(() => {
+      current++;
+      counter.textContent = current;
+      if (current >= target) {
+        counter.textContent = target;
+        clearInterval(timer);
+      }
+    }, speed);
+  }
+
+  // Configurazione Intersection Observer
+  const observerOptions = {
+    root: null, // viewport
+    threshold: 0.5 // almeno il 50% dell'elemento visibile
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target); // animiamo una volta sola
+      }
+    });
+  }, observerOptions);
+
+  // Applichiamo l'observer a tutti i contatori
+  document.querySelectorAll('.counter').forEach(counter => {
+    observer.observe(counter);
+  });
+</script>
 
   <!-- JS dinamico per header/footer -->
   <script src="script.js"></script>
