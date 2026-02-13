@@ -68,13 +68,13 @@ header {
 
 /* Nav menu */
 .nav-menu {
-    position: fixed;   /* già c’è */
+    position: fixed;
     top: 0;
     right: -100%;
     width: 70%;
     height: 100dvh;
     background: rgba(254, 249, 243, 0.97);
-    z-index: 2000;     /* <-- assicurati sia più alto della hero */
+    z-index: 2000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +125,7 @@ header {
 }
 
 /* ==============================
-   Hero Section full-width – DEFINITIVA
+   Hero Section full-width
 ============================== */
 section.hero {
     width: 100vw;
@@ -245,311 +245,12 @@ footer {
     }
 }
 
-/* SCRITTE SU HEADER */
-
-.hero-header {
-  width: 100%;
-  padding: 3rem 1.5rem;
-  text-transform: uppercase;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.titolo {
-  font-size: 1.2em;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.manifesto {
-  font-size: 1em;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
-}
-
-.manifesto strong {
-  font-weight: 700;
-}
-
-.categorie {
-  font-size: 1em;
-  letter-spacing: 0.08em;
-}
-
-.verde {
-  font-weight: 700;
-  color: #2E7D32;
-}
-
 /* ==============================
-   STEMMI COMUNI
+   PROGRAMMA EDIZIONE ATTUALE
 ============================== */
-
-.stemmi-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 2rem;
-}
-
-.stemma-comune {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 14px;
-    overflow: hidden; /* fondamentale */
-    background: #fff;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stemma-comune img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 10px;
-    background: #fff;
-}
-
-/* Nome del comune DENTRO il quadrato */
-.nome-comune {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.4rem 0.3rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.55); /* fascia leggibile */
-    letter-spacing: 0.02em;
-}
-
-/* Hover elegante */
-.stemma-comune:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ==============================
-   HEADER LOGO LAYOUT
-============================== */
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Logo cliccabile */
-.logo-link {
-    display: inline-flex;
-    align-items: center;
-}
-
-/* Immagine logo */
-.logo-img {
-    height: 60px;      /* dimensione elegante */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo-img {
-    transform: scale(1.05); /* micro-interazione sobria */
-}
-
-/* Testo accanto al logo */
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==============================
-   ARCHIVIO – ANNI
-============================== */
-
-#archivio {
-    text-align: center;
-}
-
-.archivio-anni {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.anno {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #ffffff;
-
-    padding: 2.2rem 1rem;
-    border-radius: 18px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(95, 160, 211, 0.85),
-        rgba(120, 185, 230, 0.85)
-    );
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    cursor: default;
-
-    transition: transform 0.35s ease,
-                box-shadow 0.35s ease,
-                background 0.35s ease;
-}
-
-/* Hover poetico */
-.anno:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
-    background: linear-gradient(
-        135deg,
-        rgba(80, 145, 200, 0.95),
-        rgba(105, 170, 220, 0.95)
-    );
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .anno {
-        font-size: 1.3rem;
-        padding: 1.6rem 0.8rem;
-    }
-}
-
-/* ==============================
-   PAGINA CONTATTI
-============================== */
-
-#contatti {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.contatti-box {
-    margin-top: 3rem;
-    padding: 3rem 2rem;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 22px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.contatti-intro {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    color: #444;
-}
-
-.contatto-principale {
-    margin-bottom: 2rem;
-}
-
-.contatto-principale span {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.75rem;
-    color: #777;
-    margin-bottom: 0.4rem;
-}
-
-.contatto-principale a {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #5fa0d3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contatto-principale a:hover {
-    color: #3d82b8;
-}
-
-.contatti-note {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .contatti-box {
-        padding: 2rem 1.5rem;
-    }
-
-    .contatto-principale a {
-        font-size: 1.3rem;
-    }
-}
-
-/* ==============================
-   LOGO NEL MENU
-============================== */
-
-.menu-logo {
-    margin-bottom: 2.5rem;
-}
-
-.menu-logo img {
-    width: 140px;
-    height: auto;
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.menu-logo img:hover {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-/* ==============================
-   HERO IMMAGINE CIRCOLARE
-============================== */
-
-.hero-image {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-image img {
-        width: 160px;
-        height: 160px;
-    }
-}
-
-/* PROGRAMMA EDIZIONE ATTUALE */
 .programma-container {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2.5rem;
     margin-top: 2rem;
 }
@@ -569,28 +270,41 @@ footer {
 
 .evento-data {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
     font-weight: 700;
     color: #5fa0d3;
     margin-bottom: 0.4rem;
+
+    /* Font responsive più flessibile */
+    font-size: clamp(0.8rem, 4vw, 2rem);
+    max-width: 100%;
+
+    /* Wrapping naturale, non spezza parole */
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+
+    text-align: center;
 }
 
 .evento-titolo {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
     font-weight: 600;
     margin-bottom: 0.3rem;
+    text-align: center;
 }
 
 .evento-comune {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     margin-bottom: 0.8rem;
     color: #333;
+    text-align: center;
 }
 
 .evento-desc {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     line-height: 1.6;
     color: #444;
+    text-align: center;
 }
 
 /* Mobile */
@@ -608,7 +322,7 @@ footer {
     }
 
     .evento-data {
-        font-size: 1.1rem;
+        font-size: clamp(0.7rem, 5vw, 1.1rem);
     }
 
     .evento-comune,
