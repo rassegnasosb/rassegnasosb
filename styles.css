@@ -738,3 +738,65 @@ footer {
 .nav-menu {
     overflow-y: auto;     /* abilita scroll interno */
 }
+
+/* ==============================
+   HERO ACQUA
+============================== */
+
+.hero-acqua {
+    text-align: center;
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
+    color: #fff;
+}
+
+/* Titolo grande ed epico */
+.titolo-epico {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+/* Sottotitolo */
+.edizione {
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    opacity: 0.95;
+}
+
+/* ==============================
+   INTRO ACQUA
+============================== */
+
+.intro-acqua {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Titolo tema */
+.tema-acqua {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    color: #333;
+}
+
+/* Parola ACQUA evidenziata */
+.tema-acqua span {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #5fa0d3;
+}
+
+/* Frase poetica */
+.intro-poetica {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
