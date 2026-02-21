@@ -712,3 +712,29 @@ footer {
         padding: 1.6rem 0.8rem;
     }
 }
+
+/* ==============================
+   LOGO NEL MENU (prima voce)
+============================== */
+.menu-logo {
+    margin-bottom: 2.5rem;
+}
+
+.menu-logo img {
+    width: 140px;        /* dimensione logo */
+    height: auto;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-logo img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* ==============================
+   MENU HAMBURGER SCROLLABILE
+============================== */
+.nav-menu {
+    overflow-y: auto;     /* abilita scroll interno */
+}
