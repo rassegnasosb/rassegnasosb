@@ -15,7 +15,7 @@ body {
     background: #fef9f3;
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* evita scroll orizzontale */
 }
 
 /* ==============================
@@ -68,13 +68,13 @@ header {
 
 /* Nav menu */
 .nav-menu {
-    position: fixed;
+    position: fixed;   /* già c’è */
     top: 0;
     right: -100%;
     width: 70%;
     height: 100dvh;
     background: rgba(254, 249, 243, 0.97);
-    z-index: 2000;
+    z-index: 2000;     /* <-- assicurati sia più alto della hero */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +90,7 @@ header {
     opacity: 1;
 }
 
+/* Tasto chiudi X */
 #close-menu {
     position: absolute;
     top: 20px;
@@ -121,6 +122,254 @@ header {
 
 .nav-menu a:hover {
     color: #a85c40;
+}
+
+/* ==============================
+   Hero Section full-width – DEFINITIVA
+============================== */
+section.hero {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+
+    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override immagine circolare */
+.hero-image img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-image img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+section.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 2;
+    pointer-events: none;
+}
+
+section.hero .hero-text {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+section.hero .hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+section.hero .hero-text p {
+    font-size: 1.2rem;
+    color: #fdfdfd;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    section.hero img { max-height: 300px; }
+    section.hero .hero-text h1 { font-size: 2rem; }
+    section.hero .hero-text p { font-size: 1rem; }
+    section.hero { padding: 1.5rem 1rem; }
+}
+
+/* ==============================
+   Sections
+============================== */
+section {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(254, 249, 243, 0.95);
+    color: #555;
+    border-top: 1px solid #ddd;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro su mobile */
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* SCRITTE SU HEADER */
+
+.hero-header {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titolo {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.manifesto {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.manifesto strong {
+  font-weight: 700;
+}
+
+.categorie {
+  font-size: 1em;
+  letter-spacing: 0.08em;
+}
+
+.verde {
+  font-weight: 700;
+  color: #2E7D32;
+}
+
+/* ==============================
+   STEMMI COMUNI
+============================== */
+
+.stemmi-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.stemma-comune {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    overflow: hidden; /* fondamentale */
+    background: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stemma-comune img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff;
+}
+
+/* Nome del comune DENTRO il quadrato */
+.nome-comune {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55); /* fascia leggibile */
+    letter-spacing: 0.02em;
+}
+
+/* Hover elegante */
+.stemma-comune:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   HEADER LOGO LAYOUT
+============================== */
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Logo cliccabile */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Immagine logo */
+.logo-img {
+    height: 60px;      /* dimensione elegante */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo-img {
+    transform: scale(1.05); /* micro-interazione sobria */
+}
+
+/* Testo accanto al logo */
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
 /* ==============================
