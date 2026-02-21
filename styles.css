@@ -743,25 +743,23 @@ footer {
 /* ==============================
    HERO ACQUA
 ============================== */
-
 .hero-acqua {
     text-align: center;
     background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
     color: #fff;
+    padding: 4rem 1rem; /* padding verticale e laterale responsivo */
 }
 
-/* Titolo grande ed epico */
 .titolo-epico {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-size: clamp(2.8rem, 6vw, 4rem); /* scala tra mobile e desktop */
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
     text-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
-/* Sottotitolo */
 .edizione {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     letter-spacing: 0.08em;
     opacity: 0.95;
 }
@@ -769,35 +767,42 @@ footer {
 /* ==============================
    INTRO ACQUA
 ============================== */
-
-.intro-acqua {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
+.intro-poetica {
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.3rem); /* si adatta al mobile e desktop */
+    line-height: 2; /* più respiro tra le righe */
+    color: #444;
+    margin: 1rem auto 2rem auto; /* margini più equilibrati sopra e sotto */
+    max-width: 500px; /* limita la larghezza per leggere meglio */
+    text-align: center; /* rimane centrata */
+    letter-spacing: 0.02em; /* leggermente più ariosa */
 }
 
-/* Titolo tema */
+/* ==============================
+   TEMA ACQUA
+============================== */
 .tema-acqua {
+    text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 400;
+    line-height: 1.2;
     margin-bottom: 1.2rem;
     color: #333;
 }
 
-/* Parola ACQUA evidenziata */
 .tema-acqua span {
     display: block;
-    font-size: 2.2rem;
     font-weight: 700;
+    font-size: clamp(2rem, 8vw, 4rem); /* scala in base alla viewport */
+    color: #5fcde4;
+    text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #5fa0d3;
 }
 
-/* Frase poetica */
-.intro-poetica {
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #444;
+/* Solo desktop: ingrandisci L’ACQUA */
+@media (min-width: 1024px) {
+    .tema-acqua span {
+        font-size: 8rem;
+    }
 }
