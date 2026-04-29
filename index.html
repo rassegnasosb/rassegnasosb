@@ -8,51 +8,115 @@
 </head>
 <body>
 
-    <!-- Header dinamico -->
-    <div id="header-placeholder"></div>
+<header>
+    <div class="header-left">
+        <a href="#" class="logo-link">
+            <img src="img/logo.png" alt="Logo Rassegna Senza Orario Senza Bandiera" class="logo-img">
+        </a>
+    </div>
 
-  <!-- Hero section -->
+    <div class="hamburger" id="hamburger" aria-label="Apri menu" tabindex="0">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+
+    <nav class="nav-menu" id="nav-menu">
+        <div id="close-menu" aria-label="Chiudi menu">&times;</div>
+        <ul>
+            <li><a href="#la-rassegna">La Rassegna</a></li>
+            <li><a href="#comuni-coinvolti">Comuni</a></li>
+            <li><a href="#programma-2026">Programma</a></li>
+            <li><a href="#edizioni-passate">Archivio</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
 <section class="hero">
-    <div class="hero-text">
+    <div class="hero-content">
         <h1>“Andrò ancora per le strade del mondo…”</h1>
         <p>Cinema, teatro e musica tra i comuni del territorio, da vent’anni senza confini né orari.</p>
 
-        <!-- Immagine hero circolare -->
-        <div class="hero-image">
-            <img src="img/foto-hero-home.png" alt="Rassegna Senza Orario Senza Bandiera">
+        <a href="#programma-2026" class="cta">Scopri il programma</a>
+
+        <!-- VIDEO HERO -->
+        <div class="hero-video">
+            <video autoplay muted loop playsinline aria-describedby="video-desc">
+                <source src="img/spighe-vento.mp4" type="video/mp4">
+            </video>
         </div>
+
+        <p id="video-desc" class="visually-hidden">
+            Video di spighe mosse dal vento, simbolo di movimento e leggerezza della rassegna.
+        </p>
     </div>
 </section>
 
-    <!-- Sezioni principali -->
-    <section id="la-rassegna">
-        <h2>La Rassegna</h2>
-        <p>Storia, anima e missione della Rassegna Senza Orario Senza Bandiera, un progetto culturale che unisce cinema, teatro e musica sul territorio.</p>
-    </section>
+<section id="la-rassegna">
+    <h2>La Rassegna</h2>
+    <p>Un progetto culturale che unisce cinema, teatro e musica nel territorio.</p>
+</section>
 
-    <section id="comuni-coinvolti">
-        <h2>Comuni Coinvolti</h2>
-        <p>Scopri i comuni che partecipano e sostengono questo viaggio culturale senza confini, dimostrando collaborazione e valorizzazione del territorio.</p>
-    </section>
+<section id="comuni-coinvolti">
+    <h2>Comuni Coinvolti</h2>
+    <p>I comuni che partecipano e sostengono questo viaggio culturale.</p>
+</section>
 
-    <section id="programma-2026">
-        <h2>Programma 2026</h2>
-        <p>Consulta il calendario degli eventi di cinema, teatro e musica per l’anno corrente e pianifica la tua partecipazione.</p>
-    </section>
+<section id="programma-2026">
+    <h2>Programma 2026</h2>
+    <div class="programma-container">
 
-    <section id="edizioni-passate">
-        <h2>Edizioni Passate</h2>
-        <p>Un viaggio nel tempo: le edizioni precedenti della rassegna dal 2006 a oggi, con foto, programmi e momenti salienti.</p>
-    </section>
+        <div class="evento-box">
+            <div class="evento-data">12 Giugno 2026</div>
+            <div class="evento-titolo">Cinema sotto le stelle</div>
+            <div class="evento-comune">Vicenza</div>
+            <div class="evento-desc">Proiezione all’aperto nel centro storico.</div>
+        </div>
 
-    <section id="contatti">
-        <h2>Contatti</h2>
-        <p>Per informazioni, partnership o collaborazione con la rassegna, contattaci direttamente.</p>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer dinamico -->
-    <div id="footer-placeholder"></div>
+<section id="edizioni-passate">
+    <h2>Edizioni Passate</h2>
+    <p>Archivio delle edizioni dal 2006 a oggi.</p>
+</section>
 
-    <script src="script.js"></script>
+<section id="contatti">
+    <h2>Contatti</h2>
+    <p>Scrivici per collaborazioni e informazioni.</p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Rassegna Senza Orario Senza Bandiera</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const closeMenu = document.getElementById("close-menu");
+
+hamburger.onclick = () => {
+    navMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+};
+
+closeMenu.onclick = () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    }
+});
+</script>
+
 </body>
 </html>

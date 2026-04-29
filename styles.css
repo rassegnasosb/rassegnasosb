@@ -1,107 +1,90 @@
+:root {
+    --blu: #5fa0d3;
+    --blu-profondo: #2f6fa3;
+    --sabbia: #fef9f3;
+    --accento: #a85c40;
+}
+
 /* ==============================
-   Reset base
+   RESET
 ============================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* ==============================
-   Body
-============================== */
 body {
-    background: #fef9f3;
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    background: var(--sabbia);
     color: #333;
     line-height: 1.6;
-    overflow-x: hidden; /* evita scroll orizzontale */
 }
 
 /* ==============================
-   Header
+   ACCESSIBILITÀ
+============================== */
+a:focus,
+button:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==============================
+   HEADER
 ============================== */
 header {
-    position: static;
-    top: 0;
-    width: 100%;
-    background: rgba(254, 249, 243, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1.2rem 2rem;
+    background: rgba(254,249,243,0.95);
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.2rem;
+.logo-img {
+    height: 60px;
 }
 
-/* Hamburger */
+/* ==============================
+   HAMBURGER
+============================== */
 .hamburger {
     cursor: pointer;
-    width: 30px;
-    height: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 5px;
 }
 
 .line {
+    width: 25px;
     height: 3px;
     background: #333;
-    border-radius: 3px;
-    transition: all 0.4s ease;
 }
 
-.hamburger.active .line1 {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active .line2 {
-    opacity: 0;
-}
-.hamburger.active .line3 {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Nav menu */
+/* ==============================
+   MENU
+============================== */
 .nav-menu {
-    position: fixed;   /* già c’è */
+    position: fixed;
     top: 0;
     right: -100%;
     width: 70%;
-    height: 100dvh;
-    background: rgba(254, 249, 243, 0.97);
-    z-index: 2000;     /* <-- assicurati sia più alto della hero */
+    height: 100vh;
+    background: var(--sabbia);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 120px;
-    overflow-y: auto;
-    transition: right 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    z-index: 2000;
 }
 
 .nav-menu.active {
     right: 0;
-    opacity: 1;
-}
-
-/* Tasto chiudi X */
-#close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.3s;
-}
-#close-menu:hover {
-    color: #a85c40;
 }
 
 .nav-menu ul {
@@ -110,707 +93,195 @@ header {
 }
 
 .nav-menu li {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    padding: 0.5rem 1rem;
 }
 
-.nav-menu a:hover {
-    color: #a85c40;
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--accento);
+    text-decoration: underline;
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 /* ==============================
-   Hero Section full-width – DEFINITIVA
+   HERO
 ============================== */
-section.hero {
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+.hero {
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        #5fa0d3 0%,
+        #87c8eb 50%,
+        #fef9f3 100%
+    );
+    color: white;
+    padding: 4rem 1rem;
+}
 
+/* contenuto centrato */
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    padding: 2rem 1rem;
-    position: relative;
-    color: #fff;
-    overflow: hidden;
-
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 1.2rem;
 }
 
-/* Override immagine circolare */
-.hero-image img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .hero-image img {
-        width: 160px;
-        height: 160px;
-    }
-}
-
-section.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.25);
-    z-index: 2;
-    pointer-events: none;
-}
-
-section.hero .hero-text {
-    position: relative;
-    z-index: 3;
-    max-width: 900px;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-section.hero .hero-text h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* titolo */
+.hero h1 {
+    font-size: 2.5rem;
     line-height: 1.2;
 }
 
-section.hero .hero-text p {
-    font-size: 1.2rem;
-    color: #fdfdfd;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    section.hero img { max-height: 300px; }
-    section.hero .hero-text h1 { font-size: 2rem; }
-    section.hero .hero-text p { font-size: 1rem; }
-    section.hero { padding: 1.5rem 1rem; }
+/* testo */
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
 }
 
 /* ==============================
-   Sections
+   VIDEO HERO (CERCHIO)
 ============================== */
-section {
-    padding: 5rem 2rem;
+.hero-video {
+    margin-top: 1.5rem;
+}
+
+.hero-video video {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==============================
+   CTA
+============================== */
+.cta {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: white;
+    color: var(--blu-profondo);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   SEZIONI
+============================== */
+section:not(.hero) {
+    padding: 4rem 2rem;
     max-width: 900px;
     margin: auto;
 }
 
 section h2 {
-    font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #333;
+    font-size: 1.8rem;
 }
 
 /* ==============================
-   Footer
+   EVENTI
+============================== */
+.programma-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.evento-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.evento-box:hover {
+    transform: translateY(-4px);
+}
+
+.evento-data {
+    color: var(--blu-profondo);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.evento-titolo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.evento-comune {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.evento-desc {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   FOOTER
 ============================== */
 footer {
-    padding: 2rem;
     text-align: center;
-    background: rgba(254, 249, 243, 0.95);
-    color: #555;
+    padding: 2rem;
     border-top: 1px solid #ddd;
 }
 
 /* ==============================
-   Responsive
+   MENU OPEN
+============================== */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ==============================
+   RESPONSIVE
 ============================== */
 @media (max-width: 768px) {
-    .hero-text h1 {
+    .hero h1 {
         font-size: 2rem;
     }
-    .hero-text p {
-        font-size: 1rem;
+
+    .hero-video video {
+        width: 150px;
+        height: 150px;
     }
-
-    .hero {
-        background: linear-gradient(to bottom, #87ceeb, #fef9f3); /* cielo chiaro su mobile */
-    }
-
-    section {
-        padding: 3rem 1.5rem;
-    }
-}
-
-/* SCRITTE SU HEADER */
-
-.hero-header {
-  width: 100%;
-  padding: 3rem 1.5rem;
-  text-transform: uppercase;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.titolo {
-  font-size: 1.2em;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.manifesto {
-  font-size: 1em;
-  font-weight: 400;
-  margin-bottom: 0.75rem;
-}
-
-.manifesto strong {
-  font-weight: 700;
-}
-
-.categorie {
-  font-size: 1em;
-  letter-spacing: 0.08em;
-}
-
-.verde {
-  font-weight: 700;
-  color: #2E7D32;
 }
 
 /* ==============================
-   STEMMI COMUNI
+   ACCESSIBILITÀ TESTO NASCOSTO
 ============================== */
-
-.stemmi-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 2rem;
-}
-
-.stemma-comune {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 14px;
-    overflow: hidden; /* fondamentale */
-    background: #fff;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stemma-comune img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 10px;
-    background: #fff;
-}
-
-/* Nome del comune DENTRO il quadrato */
-.nome-comune {
+.visually-hidden {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.4rem 0.3rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.55); /* fascia leggibile */
-    letter-spacing: 0.02em;
-}
-
-/* Hover elegante */
-.stemma-comune:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ==============================
-   HEADER LOGO LAYOUT
-============================== */
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Logo cliccabile */
-.logo-link {
-    display: inline-flex;
-    align-items: center;
-}
-
-/* Immagine logo */
-.logo-img {
-    height: 60px;      /* dimensione elegante */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo-img {
-    transform: scale(1.05); /* micro-interazione sobria */
-}
-
-/* Testo accanto al logo */
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==============================
-   Hero Section
-============================== */
-section.hero {
-    width: 100vw;
-    max-width: none;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    text-align: center;
-    padding: 2rem 1rem;
-    position: relative;
-    color: #fff;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
-
-.hero-image img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .hero-image img {
-        width: 160px;
-        height: 160px;
-    }
-}
-
-section.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.25);
-    z-index: 2;
-    pointer-events: none;
-}
-
-section.hero .hero-text {
-    position: relative;
-    z-index: 3;
-    max-width: 900px;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-section.hero .hero-text h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-section.hero .hero-text p {
-    font-size: 1.2rem;
-    color: #fdfdfd;
-}
-
-@media (max-width: 768px) {
-    section.hero img { max-height: 300px; }
-    section.hero .hero-text h1 { font-size: 2rem; }
-    section.hero .hero-text p { font-size: 1rem; }
-    section.hero { padding: 1.5rem 1rem; }
-}
-
-/* ==============================
-   Sections
-============================== */
-section {
-    padding: 5rem 2rem;
-    max-width: 900px;
-    margin: auto;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-/* ==============================
-   Footer
-============================== */
-footer {
-    padding: 2rem;
-    text-align: center;
-    background: rgba(254, 249, 243, 0.95);
-    color: #555;
-    border-top: 1px solid #ddd;
-}
-
-/* ==============================
-   EVENTI – PROGRAMMA
-============================== */
-.programma-container {
-    display: grid;
-    gap: 2.5rem;
-    margin-top: 2rem;
-}
-
-.evento-box {
-    background: rgba(255,255,255,0.85);
-    padding: 1.8rem 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    word-wrap: break-word; /* supporta testi lunghi */
-}
-
-.evento-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
-
-.evento-data {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
-    font-weight: 700;
-    color: #5fa0d3;
-    margin-bottom: 0.4rem;
-    white-space: nowrap;
-}
-
-.evento-titolo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-.evento-comune {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-    color: #333;
-}
-
-.evento-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-top: 0.8rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .programma-container {
-        gap: 1.8rem;
-    }
-
-    .evento-box {
-        padding: 1.2rem 1rem;
-    }
-
-    .evento-titolo {
-        font-size: 1.3rem;
-    }
-
-    .evento-data {
-        font-size: 1.1rem;
-    }
-
-    .evento-comune,
-    .evento-desc {
-        font-size: 0.95rem;
-    }
-}
-
-/* ==============================
-   EVENTI – PROGRAMMA GRID RESPONSIVE
-============================== */
-.programma-container {
-    display: grid;
-    gap: 2.5rem;
-    margin-top: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* Box eventi */
-.evento-box {
-    background: rgba(255,255,255,0.85);
-    padding: 1.8rem 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    word-wrap: break-word; /* supporta testi lunghi */
-}
-
-.evento-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-}
-
-/* Testi eventi */
-.evento-data {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
-    font-weight: 700;
-    color: #5fa0d3;
-    margin-bottom: 0.4rem;
-    white-space: normal;      /* permette al testo lungo di andare a capo */
-    word-wrap: break-word;    /* gestisce parole lunghe */
-}
-
-.evento-titolo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-.evento-comune {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
-    color: #333;
-}
-
-.evento-desc {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-    margin-top: 0.8rem;
-}
-
-/* Mobile e schermi piccoli */
-@media (max-width: 768px) {
-    .programma-container {
-        gap: 1.8rem;
-    }
-
-    .evento-box {
-        padding: 1.2rem 1rem;
-    }
-
-    .evento-titolo {
-        font-size: 1.3rem;
-    }
-
-    .evento-data {
-        font-size: 1.1rem;
-    }
-
-    .evento-comune,
-    .evento-desc {
-        font-size: 0.95rem;
-    }
-}
-/* ==============================
-   HEADER LOGO LAYOUT
-============================== */
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Logo cliccabile */
-.logo-link {
-    display: inline-flex;
-    align-items: center;
-}
-
-/* Immagine logo */
-.logo-img {
-    height: 60px;      /* dimensione elegante */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-link:hover .logo-img {
-    transform: scale(1.05); /* micro-interazione sobria */
-}
-
-/* Testo accanto al logo */
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-/* ==============================
-   ARCHIVIO – ANNI
-============================== */
-
-#archivio {
-    text-align: center;
-}
-
-.archivio-anni {
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.anno {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #ffffff;
-
-    padding: 2.2rem 1rem;
-    border-radius: 18px;
-
-    background: linear-gradient(
-        135deg,
-        rgba(95, 160, 211, 0.85),
-        rgba(120, 185, 230, 0.85)
-    );
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    cursor: default;
-
-    transition: transform 0.35s ease,
-                box-shadow 0.35s ease,
-                background 0.35s ease;
-}
-
-/* Hover poetico */
-.anno:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
-    background: linear-gradient(
-        135deg,
-        rgba(80, 145, 200, 0.95),
-        rgba(105, 170, 220, 0.95)
-    );
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .anno {
-        font-size: 1.3rem;
-        padding: 1.6rem 0.8rem;
-    }
-}
-
-/* ==============================
-   LOGO NEL MENU (prima voce)
-============================== */
-.menu-logo {
-    margin-bottom: 2.5rem;
-}
-
-.menu-logo img {
-    width: 140px;        /* dimensione logo */
-    height: auto;
-    opacity: 0.9;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.menu-logo img:hover {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
-/* ==============================
-   MENU HAMBURGER SCROLLABILE
-============================== */
-.nav-menu {
-    overflow-y: auto;     /* abilita scroll interno */
-}
-
-/* ==============================
-   HERO ACQUA
-============================== */
-.hero-acqua {
-    text-align: center;
-    background: linear-gradient(to bottom, #5fa0d3, #d6e2f0);
-    color: #fff;
-    padding: 4rem 1rem; /* padding verticale e laterale responsivo */
-}
-
-.titolo-epico {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 4rem); /* scala tra mobile e desktop */
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 4px 18px rgba(0,0,0,0.25);
-}
-
-.edizione {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    letter-spacing: 0.08em;
-    opacity: 0.95;
-}
-
-/* ==============================
-   INTRO ACQUA
-============================== */
-.intro-poetica {
-    font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.3rem); /* si adatta al mobile e desktop */
-    line-height: 2; /* più respiro tra le righe */
-    color: #444;
-    margin: 1rem auto 2rem auto; /* margini più equilibrati sopra e sotto */
-    max-width: 500px; /* limita la larghezza per leggere meglio */
-    text-align: center; /* rimane centrata */
-    letter-spacing: 0.02em; /* leggermente più ariosa */
-}
-
-/* ==============================
-   TEMA ACQUA
-============================== */
-.tema-acqua {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 1.2rem;
-    color: #333;
-}
-
-.tema-acqua span {
-    display: block;
-    font-weight: 700;
-    font-size: clamp(2rem, 8vw, 4rem); /* scala in base alla viewport */
-    color: #5fcde4;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-}
-
-/* Solo desktop: ingrandisci L’ACQUA */
-@media (min-width: 1024px) {
-    .tema-acqua span {
-        font-size: 8rem;
-    }
-}
-
-/* Rimuove margini/padding del contenitore eventi */
-.programma-container {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-
