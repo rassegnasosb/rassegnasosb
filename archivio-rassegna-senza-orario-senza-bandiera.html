@@ -3,48 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivio – Rassegna Senza Orario Senza Bandiera</title>
 
-    <!-- CSS principale -->
+    <title>Archivio | Rassegna Senza Orario Senza Bandiera</title>
+    <meta name="description" content="Archivio delle edizioni della Rassegna Senza Orario Senza Bandiera dal 2004 a oggi. Un viaggio tra cinema, teatro e cultura nei territori.">
+
     <link rel="stylesheet" href="styles.css">
-
-<style>
-  /* Tutti i link degli anni diventano bianchi e senza sottolineatura */
-  .archivio-anni .anno a {
-    color: white;          /* testo bianco */
-    text-decoration: none; /* rimuove la sottolineatura */
-  }
-
-  /* Opzionale: colore leggermente diverso quando ci passi sopra con il mouse */
-  .archivio-anni .anno a:hover {
-    color: #ddd;           /* bianco-grigio chiaro */
-  }
-</style>
-
-    <!-- Font poetico -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Header dinamico -->
-    <div id="header-placeholder"></div>
+<header class="hero-header">
 
-    <!-- Hero / Intro -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Archivio della Rassegna</h1>
-            <p>
-                Un viaggio nel tempo tra le rassegne senza orario e senza bandiera.<br>
-                Luoghi, luci, persone.<br>
-                Qui puoi consultare le informazioni sulle edizioni passate.
-            </p>
-        </div>
-    </section>
+  <div class="header-left">
+    <a href="https://rassegnasosb.github.io/rassegnasosb/" class="logo-link">
+      <img src="img/logo-sosb.png" alt="Senza Orario Senza Bandiera" class="logo-img">
+    </a>
 
-    <!-- Archivio anni -->
-<!-- Archivio anni -->
-<section id="archivio">
-    <h2>Edizioni</h2>
+    <div class="logo-text">
+      <div class="titolo">RASSEGNA</div>
+      <div class="manifesto">
+        SENZA <strong>ORARIO</strong> SENZA <strong>BANDIERA</strong>
+      </div>
+      <div class="categorie">
+        FILM <span class="verde">VIAGGI</span> AVVENIMENTI <span class="verde">SCOPERTE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+  </div>
+
+  <nav class="nav-menu" id="nav-menu">
+    <div id="close-menu">&times;</div>
+
+    <ul>
+      <li class="menu-logo">
+        <a href="https://rassegnasosb.github.io/rassegnasosb/">
+          <img src="img/logo-sosb.png" alt="Rassegna Senza Orario Senza Bandiera">
+        </a>
+      </li>
+
+      <li><a href="rassegna-senza-orario-senza-bandiera.html">La Rassegna</a></li>
+      <li><a href="comuni-affiliati-rassegna-senza-orario-senza-bandiera.html">Comuni Affiliati</a></li>
+      <li><a href="rassegna-senza-orario-senza-bandiera-programma-2026.html">Programma 2026</a></li>
+      <li><a href="archivio-rassegna-senza-orario-senza-bandiera.html">Archivio</a></li>
+      <li><a href="contatti-rassegna-senza-orario-senza-bandiera.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<main>
+
+<!-- HERO coerente -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+
+        <h1 id="hero-title">Archivio della Rassegna</h1>
+
+        <p>
+            Un viaggio nel tempo tra le edizioni della Rassegna Senza Orario Senza Bandiera.<br>
+            Cinema, teatro e musica dal 2004 a oggi.
+        </p>
+
+    </div>
+</section>
+
+<!-- ARCHIVIO -->
+<section id="archivio" aria-labelledby="archivio-title">
+
+    <h2 id="archivio-title">Edizioni</h2>
 
     <div class="archivio-anni">
 
@@ -73,11 +105,34 @@
     </div>
 </section>
 
-    <!-- Footer dinamico -->
-    <div id="footer-placeholder"></div>
+</main>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+<footer>
+    <p>© 2026 Rassegna Senza Orario Senza Bandiera</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const closeMenu = document.getElementById("close-menu");
+
+hamburger.onclick = () => {
+    navMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+};
+
+closeMenu.onclick = () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    }
+});
+</script>
 
 </body>
 </html>
