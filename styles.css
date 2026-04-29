@@ -340,3 +340,66 @@ body.menu-open {
     color: var(--blu-profondo);
     text-decoration: none;
 }
+
+/* ==============================
+   STEMMI COMUNI (RESPONSIVE UX/UI)
+============================== */
+
+.stemmi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* card cliccabile intera */
+.stemma-comune {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    background: white;
+    border-radius: 14px;
+    padding: 1rem;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover + focus accessibilità */
+.stemma-comune:hover,
+.stemma-comune:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    outline: none;
+}
+
+/* immagine */
+.stemma-comune img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+/* nome comune */
+.stemma-comune span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blu-profondo);
+    text-align: center;
+}
+
+/* mobile ottimizzato */
+@media (max-width: 600px) {
+    .stemmi-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stemma-comune img {
+        width: 65px;
+        height: 65px;
+    }
+}
