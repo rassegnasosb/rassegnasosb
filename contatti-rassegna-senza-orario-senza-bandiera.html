@@ -3,61 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti – Rassegna Senza Orario Senza Bandiera</title>
 
-    <!-- CSS principale -->
+    <title>Contatti | Rassegna Senza Orario Senza Bandiera</title>
+    <meta name="description" content="Contatta la Rassegna Senza Orario Senza Bandiera per informazioni, collaborazioni e proposte artistiche. Rispondiamo a tutti i messaggi con attenzione.">
+
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Header dinamico -->
-    <div id="header-placeholder"></div>
+<header class="hero-header">
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Contatti</h1>
-            <p>
-                Ogni rassegna nasce da un incontro.<br>
-                Se vuoi scriverci, proporre un’idea o semplicemente entrare in contatto,
-                questo è il punto di partenza.
-            </p>
-        </div>
-    </section>
+  <!-- Logo + Titolo -->
+  <div class="header-left">
+    <a href="https://rassegnasosb.github.io/rassegnasosb/" class="logo-link">
+      <img src="img/logo-sosb.png" alt="Senza Orario Senza Bandiera" class="logo-img">
+    </a>
 
-    <!-- Contenuto contatti -->
-    <section id="contatti">
-        <h2>Scrivici</h2>
+    <div class="logo-text">
+      <div class="titolo">RASSEGNA</div>
+      <div class="manifesto">
+        SENZA <strong>ORARIO</strong> SENZA <strong>BANDIERA</strong>
+      </div>
+      <div class="categorie">
+        FILM <span class="verde">VIAGGI</span> AVVENIMENTI <span class="verde">SCOPERTE</span>
+      </div>
+    </div>
+  </div>
 
-        <div class="contatti-box">
+  <!-- Hamburger menu -->
+  <div class="hamburger" id="hamburger">
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+  </div>
 
-            <p class="contatti-intro">
-                La <strong>Rassegna Senza Orario Senza Bandiera</strong> è uno spazio aperto
-                a dialoghi, collaborazioni, visioni e attraversamenti culturali.
-                Rispondiamo con attenzione a ogni messaggio.
-            </p>
+  <!-- Menu a comparsa -->
+  <nav class="nav-menu" id="nav-menu">
+    <div id="close-menu">&times;</div>
 
-            <div class="contatto-principale">
-                <span>Email</span>
-                <a href="mailto:info@rassegnasosb.it">info@rassegnasosb.it</a>
-            </div>
+    <ul>
 
-            <p class="contatti-note">
-                Per proposte artistiche, collaborazioni istituzionali, informazioni
-                sulle edizioni passate o future, utilizza l’indirizzo sopra indicato.
-            </p>
+      <!-- Logo come prima voce del menu -->
+      <li class="menu-logo">
+        <a href="https://rassegnasosb.github.io/rassegnasosb/">
+          <img src="img/logo-sosb.png" alt="Rassegna Senza Orario Senza Bandiera">
+        </a>
+      </li>
 
-        </div>
-    </section>
+      <li><a href="rassegna-senza-orario-senza-bandiera.html">La Rassegna</a></li>
+      <li><a href="comuni-affiliati-rassegna-senza-orario-senza-bandiera.html">Comuni Affiliati</a></li>
+      <li><a href="rassegna-senza-orario-senza-bandiera-programma-2026.html">Programma 2026</a></li>
+      <li><a href="archivio-rassegna-senza-orario-senza-bandiera.html">Edizioni Passate</a></li>
+      <li><a href="contatti-rassegna-senza-orario-senza-bandiera.html">Contatti</a></li>
 
-    <!-- Footer dinamico -->
-    <div id="footer-placeholder"></div>
+    </ul>
+  </nav>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+</header>
 
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+
+        <h1 id="hero-title">Contatti</h1>
+
+        <p>
+            Ogni rassegna nasce da un incontro.<br>
+            Scrivici per proposte, collaborazioni o informazioni.
+        </p>
+
+    </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" aria-labelledby="contatti-title">
+
+    <div class="contatti-box">
+
+        <h2 id="contatti-title">Scrivici</h2>
+
+        <p class="contatti-intro">
+            La <strong>Rassegna Senza Orario Senza Bandiera</strong> è uno spazio aperto
+            a dialoghi, visioni e collaborazioni culturali. Rispondiamo a ogni messaggio.
+        </p>
+
+        <!-- CONTATTO PRINCIPALE -->
+        <address class="contatto-principale">
+            <p><strong>Email</strong></p>
+            <a href="mailto:info@rassegnasosb.it" aria-label="Invia email a info@rassegnasosb.it">
+                info@rassegnasosb.it
+            </a>
+        </address>
+
+        <p class="contatti-note">
+            Per proposte artistiche, collaborazioni istituzionali e informazioni
+            sulle edizioni passate o future.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Rassegna Senza Orario Senza Bandiera</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const closeMenu = document.getElementById("close-menu");
+
+hamburger.onclick = () => {
+    navMenu.classList.add("active");
+    document.body.classList.add("menu-open");
+};
+
+closeMenu.onclick = () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        navMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    }
+});
+</script>
 </body>
 </html>
