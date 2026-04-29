@@ -118,18 +118,24 @@ header {
 }
 
 /* ==============================
-   HERO
+   HERO (MIGLIORATA CONTRASTO)
 ============================== */
 .hero {
     width: 100%;
     background: linear-gradient(
         to bottom,
-        #5fa0d3 0%,
-        #87c8eb 50%,
-        #fef9f3 100%
+        #3f7fb3 0%,
+        #5fa0d3 45%,
+        #c9dcec 100%
     );
     color: white;
     padding: 4rem 1rem;
+}
+
+/* leggera ombra per leggibilità */
+.hero h1,
+.hero p {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
 }
 
 /* contenuto centrato */
@@ -297,7 +303,6 @@ body.menu-open {
     object-fit: contain;
 }
 
-/* ancora più piccolo su mobile */
 @media (max-width: 768px) {
     .menu-logo img {
         width: 90px;
