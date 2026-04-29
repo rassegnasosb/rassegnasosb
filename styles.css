@@ -308,3 +308,35 @@ body.menu-open {
         width: 90px;
     }
 }
+
+/* ==============================
+   ARCHIVIO ANNI (CARD)
+============================== */
+
+.archivio-anni {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.anno {
+    background: white;
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.anno:hover {
+    transform: translateY(-3px);
+}
+
+.anno a {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--blu-profondo);
+    text-decoration: none;
+}
