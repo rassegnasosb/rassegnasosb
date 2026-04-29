@@ -285,3 +285,21 @@ body.menu-open {
     height: 1px;
     overflow: hidden;
 }
+
+/* ==============================
+   LOGO DENTRO MENU
+============================== */
+.menu-logo img {
+    width: 120px;
+    height: auto;
+    max-width: 60%;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+/* ancora più piccolo su mobile */
+@media (max-width: 768px) {
+    .menu-logo img {
+        width: 90px;
+    }
+}
