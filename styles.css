@@ -581,3 +581,16 @@ body.menu-open {
     font-weight: 400;
     letter-spacing: 0.5px;
 }
+
+/* FONT */
+.hero h1 {
+    font-family:
+        "Avenir Next",
+        "Segoe UI",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+}

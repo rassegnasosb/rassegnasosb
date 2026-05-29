@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initMenu() {
 
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
     const closeMenu = document.getElementById("close-menu");
 
-    // sicurezza: se manca qualcosa, blocca tutto
+    // sicurezza: se manca qualcosa, esce
     if (!hamburger || !navMenu) {
         console.error("Hamburger o navMenu non trovati nel DOM");
         return;
@@ -71,5 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMenuFn();
         }
     });
+}
 
+
+// Avvio automatico SOLO se l'header è già presente (home)
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("hamburger")) {
+        initMenu();
+    }
 });
