@@ -80,3 +80,44 @@ document.addEventListener("DOMContentLoaded", () => {
         initMenu();
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalText = document.getElementById("modal-text");
+    const closeBtn = document.getElementById("modal-close");
+
+    const buttons = document.querySelectorAll(".evento-btn");
+
+    function openModal(btn) {
+        modal.classList.remove("hidden");
+
+        modalImg.src = btn.dataset.img;
+        modalTitle.textContent = btn.dataset.title;
+        modalText.textContent = btn.dataset.content;
+
+        document.body.classList.add("menu-open");
+    }
+
+    function closeModal() {
+        modal.classList.add("hidden");
+        document.body.classList.remove("menu-open");
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => openModal(btn));
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+    });
+
+});
