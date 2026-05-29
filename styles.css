@@ -1,0 +1,583 @@
+:root {
+    --blu: #5fa0d3;
+    --blu-profondo: #2f6fa3;
+    --sabbia: #fef9f3;
+    --accento: #a85c40;
+}
+
+/* ==============================
+   RESET
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    background: var(--sabbia);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==============================
+   ACCESSIBILITÀ
+============================== */
+a:focus,
+button:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==============================
+   HEADER
+============================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: rgba(254,249,243,0.95);
+}
+
+.logo-img {
+    height: 60px;
+}
+
+/* ==============================
+   HAMBURGER
+============================== */
+.line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+}
+
+/* ==============================
+   MENU
+============================== */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--sabbia);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    z-index: 2000;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-menu li {
+    margin: 1rem 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--accento);
+    text-decoration: underline;
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ==============================
+   HERO (MIGLIORATA CONTRASTO)
+============================== */
+.hero {
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        #3f7fb3 0%,
+        #5fa0d3 45%,
+        #c9dcec 100%
+    );
+    color: white;
+    padding: 4rem 1rem;
+}
+
+/* leggera ombra per leggibilità */
+.hero h1,
+.hero p {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+/* contenuto centrato */
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* titolo */
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+/* testo */
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* ==============================
+   VIDEO HERO (CERCHIO)
+============================== */
+.hero-video {
+    margin-top: 1.5rem;
+}
+
+.hero-video video {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==============================
+   CTA
+============================== */
+.cta {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: white;
+    color: var(--blu-profondo);
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   SEZIONI
+============================== */
+section:not(.hero) {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+/* ==============================
+   EVENTI
+============================== */
+.programma-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.evento-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.evento-box:hover {
+    transform: translateY(-4px);
+}
+
+.evento-data {
+    color: var(--blu-profondo);
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.evento-titolo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.evento-comune {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.evento-desc {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+/* ==============================
+   MENU OPEN
+============================== */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-video video {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ==============================
+   ACCESSIBILITÀ TESTO NASCOSTO
+============================== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* ==============================
+   LOGO DENTRO MENU
+============================== */
+.menu-logo img {
+    width: 120px;
+    height: auto;
+    max-width: 60%;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .menu-logo img {
+        width: 90px;
+    }
+}
+
+/* ==============================
+   ARCHIVIO ANNI (CARD)
+============================== */
+
+.archivio-anni {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.anno {
+    background: white;
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.anno:hover {
+    transform: translateY(-3px);
+}
+
+.anno a {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--blu-profondo);
+    text-decoration: none;
+}
+
+/* ==============================
+   STEMMI COMUNI (RESPONSIVE UX/UI)
+============================== */
+
+.stemmi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* card cliccabile intera */
+.stemma-comune {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    background: white;
+    border-radius: 14px;
+    padding: 1rem;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover + focus accessibilità */
+.stemma-comune:hover,
+.stemma-comune:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    outline: none;
+}
+
+/* immagine */
+.stemma-comune img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+/* nome comune */
+.stemma-comune span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--blu-profondo);
+    text-align: center;
+}
+
+/* mobile ottimizzato */
+@media (max-width: 600px) {
+    .stemmi-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stemma-comune img {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* ==============================
+   BOTTONI SEZIONI
+============================== */
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.6rem;
+
+    background: var(--blu-profondo);
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+
+    border-radius: 999px;
+
+    box-shadow: 0 6px 18px rgba(47,111,163,0.18);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* hover */
+.btn-link:hover {
+    background: var(--blu);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(47,111,163,0.22);
+}
+
+/* click */
+.btn-link:active {
+    transform: translateY(0);
+}
+
+/* focus accessibilità */
+.btn-link:focus {
+    outline: 3px solid rgba(95,160,211,0.35);
+    outline-offset: 3px;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+    .btn-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* ==============================
+   HAMBURGER BUTTON ACCESSIBILE
+============================== */
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+}
+
+/* migliora area cliccabile */
+.hamburger:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+/* linee hamburger */
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    display: block;
+}
+
+/* ==============================
+   MENU ACCESSIBILE
+============================== */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--sabbia);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    transition: right 0.3s ease;
+    z-index: 2000;
+}
+
+/* stato aperto */
+.nav-menu.active {
+    right: 0;
+}
+
+/* stato accessibilità (aria-hidden support UI) */
+.nav-menu[aria-hidden="true"] {
+    visibility: hidden;
+}
+
+.nav-menu[aria-hidden="false"] {
+    visibility: visible;
+}
+
+/* focus menu link più evidente */
+.nav-menu a:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+/* ==============================
+   CLOSE BUTTON MENU
+============================== */
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    font-size: 2rem;
+    cursor: pointer;
+
+    background: transparent;
+    border: none;
+
+    padding: 0.3rem 0.6rem;
+}
+
+#close-menu:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+/* ==============================
+   DISABLE SCROLL WHEN MENU OPEN
+============================== */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ==============================
+   CATEGORIE HEADER
+============================== */
+
+.categorie {
+    color: #333;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.categorie .verde {
+    color: #00bf63;
+    font-weight: 700;
+}
+
+.manifesto {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.categorie {
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
