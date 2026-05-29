@@ -594,3 +594,76 @@ body.menu-open {
     letter-spacing: -0.03em;
     line-height: 0.95;
 }
+
+/* DISPOSIZIONE HEADER */
+@media (min-width: 768px) {
+
+    .hero-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 2rem;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* BLOCCO CENTRALE ASSOLUTO */
+    .logo-text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    /* hamburger a destra */
+    .hamburger {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .hero-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.2rem;
+        position: relative;
+    }
+
+    /* LOGO + TESTO impilati ma compatti */
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .logo-text {
+        position: static;      /* IMPORTANTISSIMO: disattiva il centramento desktop */
+        transform: none;
+        text-align: left;
+    }
+
+    .titolo {
+        font-size: 0.9rem;
+    }
+
+    .manifesto {
+        font-size: 0.9rem;
+        line-height: 1.1;
+    }
+
+    .categorie {
+        display: none; /* opzionale ma consigliato su mobile */
+    }
+
+    /* hamburger più “centrato visivamente” */
+    .hamburger {
+        margin-left: auto;
+        padding: 0.4rem;
+    }
+}
