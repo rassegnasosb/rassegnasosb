@@ -81,43 +81,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.querySelectorAll(".evento-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
 
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    const modalTitle = document.getElementById("modal-title");
-    const modalText = document.getElementById("modal-text");
-    const closeBtn = document.getElementById("modal-close");
+        const box = btn.closest(".evento-box");
 
-    const buttons = document.querySelectorAll(".evento-btn");
+        document.getElementById("modal-img").src = box.dataset.img;
+        document.getElementById("modal-title").textContent = box.dataset.title;
+        document.getElementById("modal-meta").textContent =
+            box.dataset.date + " • " + box.dataset.place;
+        document.getElementById("modal-text").textContent = box.dataset.text;
 
-    function openModal(btn) {
-        modal.classList.remove("hidden");
+        document.getElementById("modal").classList.remove("hidden");
+    });
+});
 
-        modalImg.src = btn.dataset.img;
-        modalTitle.textContent = btn.dataset.title;
-        modalText.textContent = btn.dataset.content;
+document.querySelector(".modal-close").addEventListener("click", () => {
+    document.getElementById("modal").classList.add("hidden");
+});
 
-        document.body.classList.add("menu-open");
+document.getElementById("modal").addEventListener("click", (e) => {
+    if (e.target.id === "modal") {
+        e.target.classList.add("hidden");
     }
-
-    function closeModal() {
-        modal.classList.add("hidden");
-        document.body.classList.remove("menu-open");
-    }
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => openModal(btn));
-    });
-
-    closeBtn.addEventListener("click", closeModal);
-
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
-    });
-
 });
