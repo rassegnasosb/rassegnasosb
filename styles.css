@@ -59,55 +59,97 @@ header {
 }
 
 /* ==============================
-   MENU
+   NAV MENU (BASE)
 ============================== */
 .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
     width: 70%;
-    height: 100vh;
+    height: 100dvh;
+
     background: var(--sabbia);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     padding-top: 100px;
+
     transition: right 0.3s ease;
     z-index: 2000;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
+/* stato aperto */
 .nav-menu.active {
     right: 0;
 }
 
+/* accessibilità ARIA */
+.nav-menu[aria-hidden="true"] {
+    visibility: hidden;
+}
+
+.nav-menu[aria-hidden="false"] {
+    visibility: visible;
+}
+
+/* lista */
 .nav-menu ul {
     list-style: none;
     text-align: center;
 }
 
+/* item */
 .nav-menu li {
     margin: 1rem 0;
 }
 
+/* link */
 .nav-menu a {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
+
     padding: 0.5rem 1rem;
+    display: inline-block;
 }
 
+/* hover + focus */
 .nav-menu a:hover,
 .nav-menu a:focus {
     color: var(--accento);
     text-decoration: underline;
 }
 
+/* focus accessibilità più forte */
+.nav-menu a:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+/* bottone chiusura */
 #close-menu {
     position: absolute;
     top: 20px;
     right: 20px;
+
     font-size: 2rem;
     cursor: pointer;
+
+    background: none;
+    border: none;
+}
+
+/* focus close */
+#close-menu:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 4px;
+    border-radius: 6px;
 }
 
 /* ==============================
@@ -222,12 +264,6 @@ section h2 {
 
 .evento-box:hover {
     transform: translateY(-4px);
-}
-
-.evento-data {
-    color: var(--blu-profondo);
-    font-weight: bold;
-    margin-bottom: 0.3rem;
 }
 
 .evento-titolo {
@@ -459,6 +495,8 @@ body.menu-open {
     margin-top: 2rem;
 }
 
+
+
 /* ==============================
    HAMBURGER BUTTON ACCESSIBILE
 ============================== */
@@ -485,45 +523,6 @@ body.menu-open {
     height: 3px;
     background: #333;
     display: block;
-}
-
-/* ==============================
-   MENU ACCESSIBILE
-============================== */
-.nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background: var(--sabbia);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    transition: right 0.3s ease;
-    z-index: 2000;
-}
-
-/* stato aperto */
-.nav-menu.active {
-    right: 0;
-}
-
-/* stato accessibilità (aria-hidden support UI) */
-.nav-menu[aria-hidden="true"] {
-    visibility: hidden;
-}
-
-.nav-menu[aria-hidden="false"] {
-    visibility: visible;
-}
-
-/* focus menu link più evidente */
-.nav-menu a:focus {
-    outline: 3px solid var(--blu);
-    outline-offset: 4px;
-    border-radius: 6px;
 }
 
 /* ==============================
@@ -554,32 +553,6 @@ body.menu-open {
 ============================== */
 body.menu-open {
     overflow: hidden;
-}
-
-/* ==============================
-   CATEGORIE HEADER
-============================== */
-
-.categorie {
-    color: #333;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.categorie .verde {
-    color: #00bf63;
-    font-weight: 700;
-}
-
-.manifesto {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.categorie {
-    font-size: 0.82rem;
-    font-weight: 400;
-    letter-spacing: 0.5px;
 }
 
 /* FONT */
@@ -655,10 +628,6 @@ body.menu-open {
     .manifesto {
         font-size: 0.9rem;
         line-height: 1.1;
-    }
-
-    .categorie {
-        display: none; /* opzionale ma consigliato su mobile */
     }
 
     /* hamburger più “centrato visivamente” */
@@ -805,48 +774,6 @@ body.menu-open {
 }
 
 /* ==============================
-   CATEGORIE HEADER (SEMPRE VISIBILI + FLUIDE)
-============================== */
-
-.categorie {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-    color: #333;
-
-    max-width: 100%;
-}
-
-/* ogni parola */
-.categorie span {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-/* evidenziato */
-.categorie .verde {
-    color: #00bf63;
-    font-weight: 700;
-}
-
-/* ==============================
-   DESKTOP OTTIMIZZATO
-============================== */
-
-@media (min-width: 768px) {
-    .categorie {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 0.8rem;
-    }
-}
-
-/* ==============================
    MOBILE
 ============================== */
 
@@ -859,26 +786,9 @@ body.menu-open {
         margin-bottom: 0.6rem;
     }
 
-    .categorie {
-        font-size: 0.7rem;
-        flex-wrap: wrap;
-        gap: 0.3rem;
-    }
-
     .manifesto::after {
         width: 70px;
         opacity: 0.25;
-    }
-}
-
-/* ==============================
-   MICRO MOBILE
-============================== */
-
-@media (max-width: 420px) {
-    .categorie {
-        font-size: 0.65rem;
-        letter-spacing: 0.3px;
     }
 }
 
@@ -900,16 +810,6 @@ body.menu-open {
     border-radius: 999px;
 
     width: fit-content;
-}
-
-/* SCROLL MENU */
-.nav-menu{
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.nav-menu{
-    height: 100dvh;
 }
 
 /* MIGLIORIE CARDS */
@@ -953,23 +853,6 @@ body.menu-open {
     margin-bottom: 0.5rem;
     aspect-ratio: 16 / 9;
     height: auto;
-}
-
-/* DATA più leggibile e separata */
-.evento-data {
-    display: inline-block;
-    width: fit-content;
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-
-    color: var(--blu-profondo);
-    background: rgba(95,160,211,0.12);
-
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
 }
 
 /* LOCATION già buona ma più stacco */
@@ -1022,25 +905,6 @@ body.menu-open {
 /* ==============================
    EVENTI – LOOK PIÙ PROFESSIONALE
 ============================== */
-
-/* DATA = QUANDO */
-.evento-data {
-    background: rgba(95,160,211,0.12);
-    color: var(--blu-profondo);
-
-    display: inline-block;
-    width: fit-content;
-
-    padding: 0.35rem 0.7rem;
-
-    border-radius: 6px;
-
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-}
-
 /* LUOGO = DOVE */
 .evento-location {
     background: rgba(168,92,64,0.10);
@@ -1091,12 +955,7 @@ body.menu-open {
     margin-top: auto;
 }
 
-/* CARDSSS */
-.evento-data {
-    background: var(--blu-profondo);
-    color: white;
-}
-
+/* CARDS */
 .evento-location {
     background: rgba(168,92,64,0.10);
     color: var(--accento);
@@ -1114,4 +973,85 @@ body.menu-open {
     display: flex;
     flex-direction: column; /* titolo sotto, ma tutto a destra del logo */
   }
+}
+
+/* ==============================
+   CATEGORIE HEADER (PULITO)
+============================== */
+
+.categorie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    color: #333;
+
+    max-width: 100%;
+}
+
+/* ogni parola */
+.categorie span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* evidenziato */
+.categorie .verde {
+    color: #00bf63;
+    font-weight: 700;
+}
+
+/* ==============================
+   DESKTOP OTTIMIZZATO
+============================== */
+
+@media (min-width: 768px) {
+    .categorie {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 767px) {
+    .categorie {
+        font-size: 0.7rem;
+        gap: 0.3rem;
+    }
+}
+
+/* ==============================
+   MICRO MOBILE
+============================== */
+
+@media (max-width: 420px) {
+    .categorie {
+        font-size: 0.65rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* EVENTO DATA */
+.evento-data {
+    display: inline-block;
+    width: fit-content;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+
+    background: var(--blu-profondo);
+    color: white;
 }
