@@ -903,7 +903,12 @@ body.menu-open {
 }
 
 /* SCROLL MENU */
-.nav-menu {
-    max-height: 100vh;
+.nav-menu{
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
+
+.nav-menu{
+    height: 100dvh;
+}
+
