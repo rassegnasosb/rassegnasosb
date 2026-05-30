@@ -901,3 +901,9 @@ body.menu-open {
 
     width: fit-content;
 }
+
+/* SCROLL MENU */
+.nav-menu {
+    max-height: 100vh;
+    overflow-y: auto;
+}
