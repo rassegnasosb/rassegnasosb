@@ -668,181 +668,114 @@ body.menu-open {
     }
 }
 
-/* =========================
-   EVENTO CARD IMAGE
-========================= */
-.evento-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-}
+/* EVENTI */
+.evento-box {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
 
-/* =========================
-   ANTEPRIMA TESTO (CARD)
-   - mostra solo poche righe
-   - NON cambia il testo reale
-========================= */
-.evento-desc {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    background: white;
+    border-radius: 18px;
     overflow: hidden;
 
-    font-size: 0.95rem;
-    color: #444;
-    margin-top: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
-/* fallback per browser non WebKit */
-@supports not (-webkit-line-clamp: 3) {
-    .evento-desc {
-        max-height: 4.5em;
-        overflow: hidden;
-    }
+.evento-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   MODAL OVERLAY
-========================= */
+.evento-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.evento-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.evento-titolo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.evento-btn {
+    margin-top: 1rem;
+    align-self: start;
+
+    background: var(--blu-profondo);
+    color: white;
+
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.evento-btn:hover {
+    background: var(--blu);
+    transform: translateY(-2px);
+}
+
+.clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #555;
+}
+
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-
-    padding: 1.5rem;
     z-index: 9999;
 }
 
-/* hidden state */
-.modal.hidden {
-    display: none;
+.modal.active {
+    display: flex;
 }
 
-/* =========================
-   MODAL CONTENT BOX
-========================= */
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+}
+
 .modal-content {
-    background: #fff;
-    width: 100%;
-    max-width: 750px;
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    border-radius: 18px;
-    padding: 1.5rem;
-
     position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    animation: modalIn 0.2s ease;
+    width: min(600px, 90%);
+    animation: pop .25s ease;
 }
 
-/* animation */
-@keyframes modalIn {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
-/* =========================
-   MODAL IMAGE
-========================= */
-.modal-content img {
-    width: 100%;
-    border-radius: 14px;
-    margin-bottom: 1rem;
-    object-fit: cover;
-}
-
-/* =========================
-   MODAL CLOSE BUTTON
-========================= */
 .modal-close {
     position: absolute;
     top: 10px;
     right: 14px;
 
+    border: none;
+    background: transparent;
     font-size: 2rem;
-    line-height: 1;
-
-    background: none;
-    border: none;
     cursor: pointer;
-
-    color: #333;
-
-    transition: transform 0.2s ease;
 }
 
-.modal-close:hover {
-    transform: scale(1.1);
-}
-
-/* =========================
-   SCROLL PERSONALIZZATO (OPZIONALE)
-========================= */
-.modal-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.2);
-    border-radius: 10px;
-}
-
-/* =========================
-   MOBILE FIX
-========================= */
-@media (max-width: 600px) {
-    .modal-content {
-        padding: 1rem;
-        border-radius: 14px;
-    }
-
-    .evento-img {
-        height: 180px;
-    }
-}
-
-/* EVENTO E BOTTONE PRO */
-.evento-desc {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    color: #444;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 4;   /* numero righe preview */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
-    line-height: 1.5;
-}
-
-.evento-btn {
-    margin-top: 1rem;
-    background: var(--blu-profondo);
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.evento-btn:hover {
-    transform: translateY(-2px);
-    background: var(--blu);
-}

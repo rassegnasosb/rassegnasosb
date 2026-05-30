@@ -83,65 +83,50 @@ document.addEventListener("DOMContentLoaded", () => {
     initEventModal();
 });
 
-
 // =============================
-// MODAL EVENTI
+// EVENTI
 // =============================
 function initEventModal() {
+    const modal = document.getElementById("event-modal");
+    const title = document.getElementById("modal-title");
+    const date = document.getElementById("modal-date");
+    const text = document.getElementById("modal-text");
 
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    const modalTitle = document.getElementById("modal-title");
-    const modalText = document.getElementById("modal-text");
-    const closeBtn = document.querySelector(".modal-close");
+    const closeBtn = modal.querySelector(".modal-close");
+    const overlay = modal.querySelector(".modal-overlay");
 
-    if (!modal || !modalImg || !modalTitle || !modalText) {
-        console.warn("Modal eventi non completo nel DOM");
-        return;
-    }
+    const events = {
+        event1: {
+            title: "Il viaggio intorno al mondo",
+            date: "Martedì 1 Settembre",
+            text: `Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando per 4 continenti in 5 anni. 
+            Desert, montagne, villaggi e città. Un racconto di viaggio, sogni e scoperta.`
+        }
+    };
 
-    function openModal(data) {
-        modalImg.src = data.img || "";
-        modalTitle.textContent = data.title || "";
-        modalText.textContent = data.text || "";
-
-        modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "";
-    }
-
-    // click bottoni eventi
     document.querySelectorAll(".evento-btn").forEach(btn => {
         btn.addEventListener("click", () => {
+            const id = btn.dataset.event;
+            const ev = events[id];
 
-            openModal({
-                img: btn.dataset.img,
-                title: btn.dataset.title,
-                text: btn.dataset.text
-            });
+            title.textContent = ev.title;
+            date.textContent = ev.date;
+            text.textContent = ev.text;
+
+            modal.classList.add("active");
         });
     });
 
-    // chiusura X
-    if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
+    function closeModal() {
+        modal.classList.remove("active");
     }
 
-    // click fuori contenuto
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
 
-    // ESC
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            closeModal();
-        }
+        if (e.key === "Escape") closeModal();
     });
 }
+
+
