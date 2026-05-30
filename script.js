@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalImg = document.getElementById("modal-img");
     const modalTitle = document.getElementById("modal-title");
     const modalText = document.getElementById("modal-text");
+    const modalDate = document.getElementById("modal-date");
     const closeBtn = document.getElementById("modal-close");
-
     const buttons = document.querySelectorAll(".evento-btn");
 
     function openModal(btn) {
@@ -96,10 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         modalImg.src = btn.closest(".evento-box").querySelector(".evento-img").src;
         modalTitle.textContent = btn.dataset.title;
-        const card = btn.closest(".evento-box");
-const fullText = card.querySelector(".evento-desc").textContent;
+        modalDate.textContent = btn.dataset.date;
 
-modalText.textContent = fullText;
+        const card = btn.closest(".evento-box");
+        const fullText = card.querySelector(".evento-desc").textContent;
+        modalText.textContent = fullText;
 
         document.body.classList.add("menu-open");
     }
