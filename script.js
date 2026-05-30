@@ -4,7 +4,7 @@ function initMenu() {
     const navMenu = document.getElementById("nav-menu");
     const closeMenu = document.getElementById("close-menu");
 
-    // sicurezza: se manca qualcosa, esce
+    // sicurezza
     if (!hamburger || !navMenu) {
         console.error("Hamburger o navMenu non trovati nel DOM");
         return;
@@ -41,20 +41,20 @@ function initMenu() {
         }
     }
 
-    // click hamburger
+    // =========================
+    // CLICK EVENTS MENU
+    // =========================
+
     hamburger.addEventListener("click", toggleMenu);
 
-    // close button
     if (closeMenu) {
         closeMenu.addEventListener("click", closeMenuFn);
     }
 
-    // click link
     navMenu.querySelectorAll("a").forEach(a => {
         a.addEventListener("click", closeMenuFn);
     });
 
-    // click fuori
     document.addEventListener("click", (e) => {
         if (
             navMenu.classList.contains("active") &&
@@ -65,21 +65,57 @@ function initMenu() {
         }
     });
 
-    // ESC
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeMenuFn();
         }
     });
+
+    // =========================
+    // 🔒 FOCUS TRAP MENU (TAB BLOCCATO)
+    // =========================
+
+    navMenu.addEventListener("keydown", (e) => {
+
+        if (!navMenu.classList.contains("active")) return;
+        if (e.key !== "Tab") return;
+
+        const focusable = navMenu.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const active = document.activeElement;
+
+        // TAB avanti
+        if (!e.shiftKey && active === last) {
+            e.preventDefault();
+            first.focus();
+        }
+
+        // SHIFT + TAB indietro
+        if (e.shiftKey && active === first) {
+            e.preventDefault();
+            last.focus();
+        }
+    });
 }
 
 
-// Avvio automatico SOLO se l'header è già presente (home)
+// Avvio menu
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("hamburger")) {
         initMenu();
     }
 });
+
+
+// =========================
+// MODAL EVENTI
+// =========================
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -101,16 +137,14 @@ document.addEventListener("DOMContentLoaded", () => {
         modalTitle.textContent = btn.dataset.title;
         modalDate.textContent = btn.dataset.date;
 
-        // TESTO COMPLETO
         const fullText = card.querySelector(".evento-desc").textContent;
         modalText.textContent = fullText;
 
-        // LUOGO (NUOVO)
         const location = card.querySelector(".evento-location");
         modalLocation.textContent = location ? location.textContent.trim() : "";
 
         document.body.classList.add("menu-open");
-        
+
         document.querySelector(".modal-content").focus();
     }
 
