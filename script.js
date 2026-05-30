@@ -87,47 +87,39 @@ document.addEventListener("DOMContentLoaded", () => {
 // EVENTI
 // =============================
 function initEventModal() {
+
     const modal = document.getElementById("event-modal");
+    const closeBtn = document.getElementById("modal-close");
 
-    const img = document.getElementById("modal-img");
-    const title = document.getElementById("modal-title");
-    const date = document.getElementById("modal-date");
-    const text = document.getElementById("modal-text");
+    const modalTitle = document.getElementById("modal-title");
+    const modalText = document.getElementById("modal-text");
 
-    const closeBtn = modal.querySelector(".modal-close");
-    const backdrop = modal.querySelector(".modal-backdrop");
+    document.querySelectorAll(".evento-btn").forEach(btn => {
 
-    const events = {
-        event1: {
-            title: "Il viaggio intorno al mondo",
-            date: "1 Settembre",
-            text: "Il giro del mondo a piedi e in solitaria per 36.000 km attraversando 4 continenti...",
-            img: "img/pieroad-viaggio-intorno-mondo.jpg"
-        }
-    };
-
-    document.querySelectorAll(".evento-link").forEach(btn => {
         btn.addEventListener("click", () => {
-            const ev = events[btn.dataset.event];
 
-            img.src = ev.img;
-            title.textContent = ev.title;
-            date.textContent = ev.date;
-            text.textContent = ev.text;
+            const card = btn.closest(".evento-box");
+
+            modalTitle.textContent = card.querySelector(".evento-titolo").textContent;
+            modalText.textContent = card.querySelector(".evento-desc").textContent;
 
             modal.classList.add("active");
         });
     });
 
-    function closeModal() {
+    closeBtn.addEventListener("click", () => {
         modal.classList.remove("active");
-    }
+    });
 
-    closeBtn.addEventListener("click", closeModal);
-    backdrop.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
 
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
+        if (e.key === "Escape") {
+            modal.classList.remove("active");
+        }
     });
 }
-

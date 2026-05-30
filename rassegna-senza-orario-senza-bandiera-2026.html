@@ -33,26 +33,27 @@
     <div class="programma-container">
 
 <!-- EVENTO 1 -->
-<div class="evento-card">
-    <div class="evento-img">
-        <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo">
-    </div>
+<div class="evento-box">
 
-    <div class="evento-body">
+    <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo" class="evento-img">
+
+    <div class="evento-content">
+
         <div class="evento-meta">
-            <span class="evento-data">1 SETTEMBRE</span>
-            <span class="evento-tag">Serata culturale</span>
+            <div class="evento-data">Martedì 1 Settembre</div>
         </div>
 
-        <h3 class="evento-title">Il viaggio intorno al mondo</h3>
+        <h3 class="evento-titolo">Il viaggio intorno al mondo</h3>
 
-        <p class="evento-text">
-            Il giro del mondo a piedi e in solitaria per più di 36.000 km attraverso continenti, deserti e montagne...
+        <!-- SOLO UNO: anteprima (uguale al testo completo ma tagliato via CSS) -->
+        <p class="evento-desc">
+            Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando per 4 continenti in 5 anni:
+            questi i numeri principali di una impresa che ha visto Nicolò Guarrera attraversare deserti e catene montuose,
+            conoscere villaggi e megalopoli, respirare atmosfere suggestive fra oasi, canyon e ghiacciai, condividere cibi e bevande con sciamani, beduini, gente di città e di campagna. Un racconto avvincente attraverso gli occhi meravigliati e curiosi di un ragazzo partito in cerca di storie e di vite belle ma soprattutto per realizzare i suoi sogni e la sua storia.
         </p>
 
-        <button class="evento-link" data-event="event1">
-            Scopri di più →
-        </button>
+        <button class="evento-btn">Scopri di più</button>
+
     </div>
 </div>
 
@@ -64,26 +65,15 @@
 <script src="script.js" defer></script>
 <script src="include.js" defer></script>
 
-<div class="event-modal" id="event-modal">
-    <div class="modal-backdrop"></div>
+<div id="event-modal" class="modal">
+    <div class="modal-content">
 
-    <div class="modal-card">
+        <button class="modal-close" id="modal-close">×</button>
 
-        <div class="modal-image">
-            <img id="modal-img" src="" alt="">
-        </div>
+        <h2 id="modal-title"></h2>
 
-        <div class="modal-content">
-            <div class="modal-meta">
-                <span id="modal-date"></span>
-            </div>
-
-            <h2 id="modal-title"></h2>
-
-            <p id="modal-text"></p>
-
-            <button class="modal-close">Chiudi</button>
-        </div>
+        <!-- SOLO TESTO COMPLETO -->
+        <p id="modal-text"></p>
 
     </div>
 </div>
