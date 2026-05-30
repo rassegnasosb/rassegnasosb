@@ -730,3 +730,16 @@ body.menu-open {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* FOCUS LOGO */
+.menu-logo a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-logo a:focus {
+    outline: 3px solid var(--blu);
+    outline-offset: 6px;
+    border-radius: 12px;
+}
