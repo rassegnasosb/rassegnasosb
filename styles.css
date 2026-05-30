@@ -1101,3 +1101,17 @@ body.menu-open {
     background: rgba(168,92,64,0.10);
     color: var(--accento);
 }
+
+/* HEADER DISPOSIZIONE */
+@media (max-width: 767px) {
+  .header-left {
+    flex-direction: row;   /* logo + testo affiancati */
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column; /* titolo sotto, ma tutto a destra del logo */
+  }
+}
