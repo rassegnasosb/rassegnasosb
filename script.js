@@ -1,10 +1,12 @@
+// =============================
+// MENU MOBILE
+// =============================
 function initMenu() {
 
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
     const closeMenu = document.getElementById("close-menu");
 
-    // sicurezza: se manca qualcosa, esce
     if (!hamburger || !navMenu) {
         console.error("Hamburger o navMenu non trovati nel DOM");
         return;
@@ -41,20 +43,16 @@ function initMenu() {
         }
     }
 
-    // click hamburger
     hamburger.addEventListener("click", toggleMenu);
 
-    // close button
     if (closeMenu) {
         closeMenu.addEventListener("click", closeMenuFn);
     }
 
-    // click link
     navMenu.querySelectorAll("a").forEach(a => {
         a.addEventListener("click", closeMenuFn);
     });
 
-    // click fuori
     document.addEventListener("click", (e) => {
         if (
             navMenu.classList.contains("active") &&
@@ -65,7 +63,6 @@ function initMenu() {
         }
     });
 
-    // ESC
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeMenuFn();
@@ -74,34 +71,77 @@ function initMenu() {
 }
 
 
-// Avvio automatico SOLO se l'header è già presente (home)
+// =============================
+// INIT
+// =============================
 document.addEventListener("DOMContentLoaded", () => {
+
     if (document.getElementById("hamburger")) {
         initMenu();
     }
+
+    initEventModal();
 });
 
-document.querySelectorAll(".evento-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
 
-        const box = btn.closest(".evento-box");
+// =============================
+// MODAL EVENTI
+// =============================
+function initEventModal() {
 
-        document.getElementById("modal-img").src = box.dataset.img;
-        document.getElementById("modal-title").textContent = box.dataset.title;
-        document.getElementById("modal-meta").textContent =
-            box.dataset.date + " • " + box.dataset.place;
-        document.getElementById("modal-text").textContent = box.dataset.text;
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalText = document.getElementById("modal-text");
+    const closeBtn = document.querySelector(".modal-close");
 
-        document.getElementById("modal").classList.remove("hidden");
-    });
-});
-
-document.querySelector(".modal-close").addEventListener("click", () => {
-    document.getElementById("modal").classList.add("hidden");
-});
-
-document.getElementById("modal").addEventListener("click", (e) => {
-    if (e.target.id === "modal") {
-        e.target.classList.add("hidden");
+    if (!modal || !modalImg || !modalTitle || !modalText) {
+        console.warn("Modal eventi non completo nel DOM");
+        return;
     }
-});
+
+    function openModal(data) {
+        modalImg.src = data.img || "";
+        modalTitle.textContent = data.title || "";
+        modalText.textContent = data.text || "";
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+    }
+
+    // click bottoni eventi
+    document.querySelectorAll(".evento-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            openModal({
+                img: btn.dataset.img,
+                title: btn.dataset.title,
+                text: btn.dataset.text
+            });
+        });
+    });
+
+    // chiusura X
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    // click fuori contenuto
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
+}
