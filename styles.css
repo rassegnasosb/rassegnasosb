@@ -1018,3 +1018,86 @@ body.menu-open {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ==============================
+   EVENTI – LOOK PIÙ PROFESSIONALE
+============================== */
+
+/* DATA = QUANDO */
+.evento-data {
+    background: rgba(95,160,211,0.12);
+    color: var(--blu-profondo);
+
+    display: inline-block;
+    width: fit-content;
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 6px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+/* LUOGO = DOVE */
+.evento-location {
+    background: rgba(168,92,64,0.10);
+    color: var(--accento);
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    width: fit-content;
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* TITOLO PIÙ FORTE */
+.evento-titolo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* TESTI SECONDARI PIÙ LEGGERI */
+.evento-comune {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* DESCRIZIONE PIÙ LEGGIBILE */
+.evento-desc {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* CARD PIÙ ORDINATA */
+.evento-box {
+    gap: 0.9rem;
+}
+
+/* BOTTONE SEMPRE IN FONDO:
+   mantiene le card allineate anche con testi diversi */
+.evento-btn {
+    margin-top: auto;
+}
+
+/* CARDSSS */
+.evento-data {
+    background: var(--blu-profondo);
+    color: white;
+}
+
+.evento-location {
+    background: rgba(168,92,64,0.10);
+    color: var(--accento);
+}
