@@ -32,51 +32,62 @@
 
     <div class="programma-container">
 
-<!-- EVENTO 1 -->
-<div class="evento-box">
+        <!-- EVENTO 1 -->
+        <div class="evento-box">
 
-    <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo" class="evento-img">
+            <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo" class="evento-img">
 
-    <div class="evento-content">
-
-        <div class="evento-meta">
             <div class="evento-data">Martedì 1 Settembre</div>
+
+            <h3 class="evento-titolo">Il viaggio intorno al mondo</h3>
+
+            <p class="evento-comune">
+                Serata culturale a cura di Nicolò Guarrera in collaborazione con Pro San Tomio
+            </p>
+
+            <p class="evento-desc">
+                Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando 
+per 4 Continenti in 5 anni: questi i numeri principali di una impresa che 
+ha visto Nicolò Guarrera, in arte Pieroad, attraversare deserti e catene 
+montuose, conoscere villaggi e megalopoli, respirare atmosfere sugge
+stive fra oasi, canyon e ghiacciai, condividere cibi e bevande con scia
+mani, beduini, gente di città e di campagna. 
+Un racconto avvincente attraverso gli occhi meravigliati e curiosi di un 
+ragazzo partito in cerca di storie e di vite belle ma soprattutto per realiz
+zare i suoi sogni e la sua storia. 
+            </p>
+
+            <button class="evento-btn"
+                data-title="Il viaggio intorno al mondo"
+                data-img="img/pieroad-viaggio-intorno-mondo.webp"
+                data-content="Il giro del mondo a piedi e in solitaria per più di 36.000 km, attraversando deserti, montagne, villaggi e megalopoli. Un viaggio di 5 anni attraverso 4 continenti.">
+                Scopri di più
+            </button>
+
         </div>
+    </div>
+</section>
 
-        <h3 class="evento-titolo">Il viaggio intorno al mondo</h3>
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
 
-        <!-- SOLO UNO: anteprima (uguale al testo completo ma tagliato via CSS) -->
-        <p class="evento-desc">
-            Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando per 4 continenti in 5 anni:
-            questi i numeri principali di una impresa che ha visto Nicolò Guarrera attraversare deserti e catene montuose,
-            conoscere villaggi e megalopoli, respirare atmosfere suggestive fra oasi, canyon e ghiacciai, condividere cibi e bevande con sciamani, beduini, gente di città e di campagna. Un racconto avvincente attraverso gli occhi meravigliati e curiosi di un ragazzo partito in cerca di storie e di vite belle ma soprattutto per realizzare i suoi sogni e la sua storia.
-        </p>
+        <button class="modal-close" id="modal-close">&times;</button>
 
-        <button class="evento-btn">Scopri di più</button>
+        <img id="modal-img" src="" alt="">
+
+        <h2 id="modal-title"></h2>
+
+        <p id="modal-text"></p>
 
     </div>
 </div>
-
-</section>
 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 
 <script src="script.js" defer></script>
 <script src="include.js" defer></script>
-
-<div id="event-modal" class="modal">
-    <div class="modal-content">
-
-        <button class="modal-close" id="modal-close">×</button>
-
-        <h2 id="modal-title"></h2>
-
-        <!-- SOLO TESTO COMPLETO -->
-        <p id="modal-text"></p>
-
-    </div>
-</div>
 
 </body>
 </html>
