@@ -726,7 +726,7 @@ body.menu-open {
 /* ANTEPRIMA EVENTI*/
 .evento-desc {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* numero righe anteprima */
+    -webkit-line-clamp: 2; /* numero righe anteprima */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
