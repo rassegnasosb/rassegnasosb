@@ -912,3 +912,109 @@ body.menu-open {
     height: 100dvh;
 }
 
+/* MIGLIORIE CARDS */
+/* ==============================
+   EVENTI – MIGLIORAMENTO UX LISTA
+============================== */
+
+/* contenitore: layout responsive vero */
+.programma-container {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* CARD: più separazione visiva */
+.evento-box {
+    background: white;
+    padding: 1.6rem;
+    border-radius: 14px;
+
+    border: 1px solid rgba(0,0,0,0.06);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* hover più leggibile (non solo movimento) */
+.evento-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* IMMAGINE più “card-like” */
+.evento-img {
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+/* DATA più leggibile e separata */
+.evento-data {
+    display: inline-block;
+    width: fit-content;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    color: var(--blu-profondo);
+    background: rgba(95,160,211,0.12);
+
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+}
+
+/* LOCATION già buona ma più stacco */
+.evento-location {
+    margin-top: 0.3rem;
+}
+
+/* TESTO: più leggibile tra card */
+.evento-comune,
+.evento-desc {
+    color: #444;
+}
+
+/* ==============================
+   TABLET (2 colonne)
+============================== */
+@media (min-width: 768px) {
+    .programma-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ==============================
+   DESKTOP (2 colonne + più aria)
+============================== */
+@media (min-width: 1100px) {
+    .programma-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .evento-box {
+        padding: 1.8rem;
+    }
+}
+
+/* ==============================
+   ULTRA WIDE (opzionale: 3 colonne leggere)
+============================== */
+@media (min-width: 1500px) {
+    .programma-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
