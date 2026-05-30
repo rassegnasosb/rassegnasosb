@@ -759,3 +759,125 @@ body.menu-open {
     color: rgba(255,255,255,0.95) !important;
     text-shadow: 0 2px 10px rgba(0,0,0,0.25) !important;
 }
+
+/* ==============================
+   HEADER LAYOUT STABILE
+============================== */
+
+.hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.2rem 2rem;
+
+    position: relative;
+
+    /* 🔥 AGGIUNTO: più respiro verso la hero */
+    margin-bottom: 1.2rem;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+/* ==============================
+   MANIFESTO
+============================== */
+
+.manifesto {
+    position: relative;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.manifesto::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    background: var(--blu-profondo);
+    opacity: 0.35;
+    margin-top: 0.4rem;
+}
+
+/* ==============================
+   CATEGORIE HEADER (SEMPRE VISIBILI + FLUIDE)
+============================== */
+
+.categorie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    color: #333;
+
+    max-width: 100%;
+}
+
+/* ogni parola */
+.categorie span {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* evidenziato */
+.categorie .verde {
+    color: #00bf63;
+    font-weight: 700;
+}
+
+/* ==============================
+   DESKTOP OTTIMIZZATO
+============================== */
+
+@media (min-width: 768px) {
+    .categorie {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 767px) {
+    .hero-header {
+        padding: 1rem 1.2rem;
+        align-items: center;
+
+        /* 🔥 meno spazio su mobile */
+        margin-bottom: 0.6rem;
+    }
+
+    .categorie {
+        font-size: 0.7rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .manifesto::after {
+        width: 70px;
+        opacity: 0.25;
+    }
+}
+
+/* ==============================
+   MICRO MOBILE
+============================== */
+
+@media (max-width: 420px) {
+    .categorie {
+        font-size: 0.65rem;
+        letter-spacing: 0.3px;
+    }
+}
