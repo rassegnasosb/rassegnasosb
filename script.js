@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
         modalLocation.textContent = location ? location.textContent.trim() : "";
 
         document.body.classList.add("menu-open");
+        
+        document.querySelector(".modal-content").focus();
     }
 
     function closeModal() {
