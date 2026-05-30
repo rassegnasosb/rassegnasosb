@@ -13,27 +13,31 @@
 
 <header class="hero-header">
 
-<!-- Logo + Titolo -->
-<div class="header-left">
-  <a href="https://rassegnasosb.github.io/rassegnasosb/" class="logo-link">
-    <img src="img/logo-sosb-2026.svg" alt="Senza Orario Senza Bandiera" class="logo-img">
-  </a>
+  <div class="header-left">
 
-  <div class="logo-text">
-    <div class="titolo">RASSEGNA</div>
+    <a href="https://rassegnasosb.github.io/rassegnasosb/" class="logo-link">
+      <img
+        src="img/logo-sosb-2026.svg"
+        alt="Vai alla homepage della Rassegna Senza Orario Senza Bandiera"
+        class="logo-img"
+      >
+    </a>
 
-    <div class="manifesto">
-      SENZA <strong>ORARIO</strong> SENZA <strong>BANDIERA</strong>
+    <div class="logo-text">
+      <div class="titolo">RASSEGNA</div>
+
+      <div class="manifesto">
+        SENZA <strong>ORARIO</strong> SENZA <strong>BANDIERA</strong>
+      </div>
+
+      <div class="categorie">
+        FILM <span class="verde">VIAGGI</span>
+        AVVENIMENTI <span class="verde">SCOPERTE</span>
+      </div>
     </div>
 
-    <div class="categorie">
-      FILM <span class="verde">VIAGGI</span>
-      AVVENIMENTI <span class="verde">SCOPERTE</span>
-    </div>
   </div>
-</div>
 
-  <!-- HAMBURGER ACCESSIBILE -->
   <button
     class="hamburger"
     id="hamburger"
@@ -46,20 +50,20 @@
     <span class="line line3"></span>
   </button>
 
-  <!-- MENU -->
-  <nav class="nav-menu" id="nav-menu" aria-hidden="true">
+  <nav class="nav-menu" id="nav-menu" aria-hidden="true" role="navigation" aria-label="Menu principale">
 
-    <!-- CHIUDI MENU (ACCESSIBILE) -->
     <button id="close-menu" aria-label="Chiudi menu">
       &times;
     </button>
 
     <ul>
 
-      <!-- Logo come prima voce del menu -->
       <li class="menu-logo">
         <a href="https://rassegnasosb.github.io/rassegnasosb/">
-          <img src="img/logo-sosb-2026.svg" alt="Rassegna Senza Orario Senza Bandiera">
+          <img
+            src="img/logo-sosb-2026.svg"
+            alt="Rassegna Senza Orario Senza Bandiera"
+          >
         </a>
       </li>
 
@@ -70,6 +74,7 @@
       <li><a href="contatti-rassegna-senza-orario-senza-bandiera.html">Contatti</a></li>
 
     </ul>
+
   </nav>
 
 </header>
@@ -81,9 +86,10 @@
     <div class="hero-content">
 
         <h1>Rassegna Senza Orario Senza Bandiera</h1>
-<p class="hero-subtitle">
-    “Andrò ancora per le strade del mondo”
-</p>
+
+        <p class="hero-subtitle">
+            “Andrò ancora per le strade del mondo”
+        </p>
 
         <p>
             Una rassegna culturale diffusa tra cinema, teatro, musica ed esplorazione del territorio,
@@ -94,7 +100,7 @@
             Scopri il programma 2026
         </a>
 
-        <div class="hero-video">
+        <div class="hero-video" aria-hidden="true">
             <video autoplay muted loop playsinline>
                 <source src="img/spighe-vento.mp4" type="video/mp4">
             </video>
@@ -102,7 +108,6 @@
 
     </div>
 </section>
-
 
 <!-- LA RASSEGNA -->
 <section id="la-rassegna">
