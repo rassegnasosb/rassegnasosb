@@ -881,3 +881,23 @@ body.menu-open {
         letter-spacing: 0.3px;
     }
 }
+
+/* LUOGO EVENTI */
+.evento-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    margin-top: 0.6rem;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: var(--blu-profondo);
+    background: rgba(95,160,211,0.12);
+
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+
+    width: fit-content;
+}
