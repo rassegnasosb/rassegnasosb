@@ -88,19 +88,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle = document.getElementById("modal-title");
     const modalText = document.getElementById("modal-text");
     const modalDate = document.getElementById("modal-date");
+    const modalLocation = document.getElementById("modal-location");
     const closeBtn = document.getElementById("modal-close");
     const buttons = document.querySelectorAll(".evento-btn");
 
     function openModal(btn) {
         modal.classList.remove("hidden");
 
-        modalImg.src = btn.closest(".evento-box").querySelector(".evento-img").src;
+        const card = btn.closest(".evento-box");
+
+        modalImg.src = card.querySelector(".evento-img").src;
         modalTitle.textContent = btn.dataset.title;
         modalDate.textContent = btn.dataset.date;
 
-        const card = btn.closest(".evento-box");
+        // TESTO COMPLETO
         const fullText = card.querySelector(".evento-desc").textContent;
         modalText.textContent = fullText;
+
+        // LUOGO (NUOVO)
+        const location = card.querySelector(".evento-location");
+        modalLocation.textContent = location ? location.textContent.trim() : "";
 
         document.body.classList.add("menu-open");
     }
