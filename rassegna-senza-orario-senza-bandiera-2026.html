@@ -33,24 +33,25 @@
     <div class="programma-container">
 
 <!-- EVENTO 1 -->
-<div class="evento-box">
-    <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo">
+<div class="evento-card">
+    <div class="evento-img">
+        <img src="img/pieroad-viaggio-intorno-mondo.jpg" alt="Il viaggio intorno al mondo">
+    </div>
 
-    <div class="evento-content">
-        <div class="evento-data">Martedì 1 Settembre</div>
-
-        <div class="evento-titolo">Il viaggio intorno al mondo</div>
-
-        <div class="evento-comune">Serata culturale con Nicolò Guarrera</div>
-
-        <div class="evento-desc clamp">
-            Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando per 4 continenti in 5 anni...
-            deserti, catene montuose, villaggi e megalopoli, oasi e ghiacciai. Un racconto avvincente di un viaggio
-            tra culture e sogni.
+    <div class="evento-body">
+        <div class="evento-meta">
+            <span class="evento-data">1 SETTEMBRE</span>
+            <span class="evento-tag">Serata culturale</span>
         </div>
 
-        <button class="evento-btn" data-event="event1">
-            Scopri di più
+        <h3 class="evento-title">Il viaggio intorno al mondo</h3>
+
+        <p class="evento-text">
+            Il giro del mondo a piedi e in solitaria per più di 36.000 km attraverso continenti, deserti e montagne...
+        </p>
+
+        <button class="evento-link" data-event="event1">
+            Scopri di più →
         </button>
     </div>
 </div>
@@ -63,15 +64,27 @@
 <script src="script.js" defer></script>
 <script src="include.js" defer></script>
 
-<div class="modal" id="event-modal">
-    <div class="modal-overlay"></div>
+<div class="event-modal" id="event-modal">
+    <div class="modal-backdrop"></div>
 
-    <div class="modal-content">
-        <button class="modal-close">&times;</button>
+    <div class="modal-card">
 
-        <h2 id="modal-title"></h2>
-        <p id="modal-date"></p>
-        <p id="modal-text"></p>
+        <div class="modal-image">
+            <img id="modal-img" src="" alt="">
+        </div>
+
+        <div class="modal-content">
+            <div class="modal-meta">
+                <span id="modal-date"></span>
+            </div>
+
+            <h2 id="modal-title"></h2>
+
+            <p id="modal-text"></p>
+
+            <button class="modal-close">Chiudi</button>
+        </div>
+
     </div>
 </div>
 

@@ -88,27 +88,29 @@ document.addEventListener("DOMContentLoaded", () => {
 // =============================
 function initEventModal() {
     const modal = document.getElementById("event-modal");
+
+    const img = document.getElementById("modal-img");
     const title = document.getElementById("modal-title");
     const date = document.getElementById("modal-date");
     const text = document.getElementById("modal-text");
 
     const closeBtn = modal.querySelector(".modal-close");
-    const overlay = modal.querySelector(".modal-overlay");
+    const backdrop = modal.querySelector(".modal-backdrop");
 
     const events = {
         event1: {
             title: "Il viaggio intorno al mondo",
-            date: "Martedì 1 Settembre",
-            text: `Il giro del mondo a piedi e in solitaria per più di 36.000 km, passando per 4 continenti in 5 anni. 
-            Desert, montagne, villaggi e città. Un racconto di viaggio, sogni e scoperta.`
+            date: "1 Settembre",
+            text: "Il giro del mondo a piedi e in solitaria per 36.000 km attraversando 4 continenti...",
+            img: "img/pieroad-viaggio-intorno-mondo.jpg"
         }
     };
 
-    document.querySelectorAll(".evento-btn").forEach(btn => {
+    document.querySelectorAll(".evento-link").forEach(btn => {
         btn.addEventListener("click", () => {
-            const id = btn.dataset.event;
-            const ev = events[id];
+            const ev = events[btn.dataset.event];
 
+            img.src = ev.img;
             title.textContent = ev.title;
             date.textContent = ev.date;
             text.textContent = ev.text;
@@ -122,11 +124,10 @@ function initEventModal() {
     }
 
     closeBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal);
+    backdrop.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
     });
 }
-
 
