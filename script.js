@@ -41,10 +41,7 @@ function initMenu() {
         }
     }
 
-    // =========================
     // CLICK EVENTS MENU
-    // =========================
-
     hamburger.addEventListener("click", toggleMenu);
 
     if (closeMenu) {
@@ -71,10 +68,7 @@ function initMenu() {
         }
     });
 
-    // =========================
-    // 🔒 FOCUS TRAP MENU (TAB BLOCCATO)
-    // =========================
-
+    // FOCUS TRAP MENU
     navMenu.addEventListener("keydown", (e) => {
 
         if (!navMenu.classList.contains("active")) return;
@@ -90,13 +84,11 @@ function initMenu() {
         const last = focusable[focusable.length - 1];
         const active = document.activeElement;
 
-        // TAB avanti
         if (!e.shiftKey && active === last) {
             e.preventDefault();
             first.focus();
         }
 
-        // SHIFT + TAB indietro
         if (e.shiftKey && active === first) {
             e.preventDefault();
             last.focus();
@@ -105,7 +97,7 @@ function initMenu() {
 }
 
 
-// Avvio menu
+// AVVIO MENU
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("hamburger")) {
         initMenu();
@@ -114,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// MODAL EVENTI
+// MODAL EVENTI (ACCESSIBILE)
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -130,6 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function openModal(btn) {
         modal.classList.remove("hidden");
+
+        // ACCESSIBILITÀ
+        modal.setAttribute("aria-hidden", "false");
+        modal.setAttribute("role", "dialog");
+        modal.setAttribute("aria-modal", "true");
 
         const card = btn.closest(".evento-box");
 
@@ -150,6 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeModal() {
         modal.classList.add("hidden");
+
+        // ACCESSIBILITÀ
+        modal.setAttribute("aria-hidden", "true");
+
         document.body.classList.remove("menu-open");
     }
 
