@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function openModal(btn) {
         modal.classList.remove("hidden");
 
-        modalImg.src = btn.dataset.img;
+        modalImg.src = btn.closest(".evento-box").querySelector(".evento-img").src;
         modalTitle.textContent = btn.dataset.title;
         const card = btn.closest(".evento-box");
 const fullText = card.querySelector(".evento-desc").textContent;
