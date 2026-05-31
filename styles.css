@@ -1055,3 +1055,53 @@ body.menu-open {
     background: var(--blu-profondo);
     color: white;
 }
+
+/* ==================================
+   HEADER FUSO CON HERO
+================================== */
+
+.hero-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+
+    background: transparent !important;
+}
+
+/* Il blu sale fino in cima,
+   ma manteniamo il respiro originale */
+.hero {
+    padding-top: 160px; /* aumenta o diminuisci di 20px se serve */
+
+    background: linear-gradient(
+        to bottom,
+        #2f6fa3 0%,
+        #5fa0d3 45%,
+        #c9dcec 100%
+    );
+}
+
+/* colori header */
+.hero-header .titolo,
+.hero-header .manifesto,
+.hero-header .categorie,
+.hero-header .categorie span:not(.verde) {
+    color: white;
+}
+
+.hero-header .manifesto::after {
+    background: rgba(255,255,255,0.4);
+}
+
+.hero-header .line {
+    background: white;
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 220px;
+    }
+}
