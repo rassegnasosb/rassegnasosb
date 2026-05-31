@@ -1105,3 +1105,27 @@ body.menu-open {
         padding-top: 220px;
     }
 }
+
+/* ==============================
+   NERIO BRIAN
+============================== */
+
+.nerio {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nerio-foto {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.nerio-citazione {
+    font-style: italic;
+    color: var(--accento);
+    margin-top: 0.5rem;
+}
