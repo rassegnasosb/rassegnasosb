@@ -1074,7 +1074,7 @@ body.menu-open {
 /* Il blu sale fino in cima,
    ma manteniamo il respiro originale */
 .hero {
-    padding-top: 130px; /* aumenta o diminuisci di 20px se serve */
+    padding-top: 140px; /* aumenta o diminuisci di 20px se serve */
 
     background: linear-gradient(
         to bottom,
@@ -1102,7 +1102,7 @@ body.menu-open {
 
 @media (max-width: 767px) {
     .hero {
-        padding-top: 130px; /* DISTANZA */
+        padding-top: 140px; /* DISTANZA */
     }
 }
 
