@@ -4,7 +4,6 @@ function initMenu() {
     const navMenu = document.getElementById("nav-menu");
     const closeMenu = document.getElementById("close-menu");
 
-    // sicurezza
     if (!hamburger || !navMenu) {
         console.error("Hamburger o navMenu non trovati nel DOM");
         return;
@@ -41,7 +40,6 @@ function initMenu() {
         }
     }
 
-    // CLICK EVENTS MENU
     hamburger.addEventListener("click", toggleMenu);
 
     if (closeMenu) {
@@ -97,7 +95,9 @@ function initMenu() {
 }
 
 
+// =========================
 // AVVIO MENU
+// =========================
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("hamburger")) {
         initMenu();
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// MODAL EVENTI (ACCESSIBILE)
+// MODAL EVENTI (ACCESSIBILE WCAG FIXED)
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,21 +120,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("modal-close");
     const buttons = document.querySelectorAll(".evento-btn");
 
+    let lastFocusedBtn = null;
+
     function openModal(btn) {
+
+        lastFocusedBtn = btn;
+
         modal.classList.remove("hidden");
 
-        // ACCESSIBILITÀ
         modal.setAttribute("aria-hidden", "false");
-        modal.setAttribute("role", "dialog");
-        modal.setAttribute("aria-modal", "true");
 
         const card = btn.closest(".evento-box");
 
-        modalImg.src = card.querySelector(".evento-img").src;
-        modalTitle.textContent = btn.dataset.title;
-        modalDate.textContent = btn.dataset.date;
+        modalImg.src = card.querySelector(".evento-img")?.src || "";
+        modalImg.alt = btn.dataset.title || "";
 
-        const fullText = card.querySelector(".evento-desc").textContent;
+        modalTitle.textContent = btn.dataset.title || "";
+        modalDate.textContent = btn.dataset.date || "";
+
+        const fullText = card.querySelector(".evento-desc")?.textContent || "";
         modalText.textContent = fullText;
 
         const location = card.querySelector(".evento-location");
@@ -142,16 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.classList.add("menu-open");
 
-        document.querySelector(".modal-content").focus();
+        // focus dentro modal
+        setTimeout(() => {
+            closeBtn.focus();
+        }, 0);
     }
 
     function closeModal() {
+
         modal.classList.add("hidden");
 
-        // ACCESSIBILITÀ
         modal.setAttribute("aria-hidden", "true");
 
         document.body.classList.remove("menu-open");
+
+        // ritorno focus al bottone che ha aperto
+        if (lastFocusedBtn) {
+            lastFocusedBtn.focus();
+        }
     }
 
     buttons.forEach(btn => {
@@ -165,7 +177,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeModal();
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+            closeModal();
+        }
     });
 
+    // =========================
+    // FOCUS TRAP MODAL
+    // =========================
+    modal.addEventListener("keydown", (e) => {
+
+        if (modal.classList.contains("hidden")) return;
+        if (e.key !== "Tab") return;
+
+        const focusable = modal.querySelectorAll(
+            'button, [href], input, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const active = document.activeElement;
+
+        if (!e.shiftKey && active === last) {
+            e.preventDefault();
+            first.focus();
+        }
+
+        if (e.shiftKey && active === first) {
+            e.preventDefault();
+            last.focus();
+        }
+    });
 });

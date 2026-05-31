@@ -195,10 +195,21 @@ zare i suoi sogni e la sua storia.
 </section>
 
 <!-- MODAL -->
-<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-content" tabindex="0">
+<div id="modal"
+     class="modal hidden"
+     role="dialog"
+     aria-modal="true"
+     aria-hidden="true"
+     aria-labelledby="modal-title"
+     aria-describedby="modal-text">
 
-        <button class="modal-close" id="modal-close">&times;</button>
+    <div class="modal-content" tabindex="-1">
+
+        <button class="modal-close"
+                id="modal-close"
+                aria-label="Chiudi finestra">
+            &times;
+        </button>
 
         <div id="modal-date" class="evento-data"></div>
 
