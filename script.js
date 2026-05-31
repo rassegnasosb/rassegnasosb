@@ -120,6 +120,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("modal-close");
     const buttons = document.querySelectorAll(".evento-btn");
 
+    // ACCESSIBILITÀ: aria-label dinamico per screen reader
+    buttons.forEach(btn => {
+        const title = btn.dataset.title;
+
+        if (title) {
+            btn.setAttribute(
+                "aria-label",
+                "Scopri di più su " + title
+            );
+        }
+    });
     let lastFocusedBtn = null;
 
     function openModal(btn) {
