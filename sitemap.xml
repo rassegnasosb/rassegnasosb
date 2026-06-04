@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://rassegnasosb.it/</loc>
+  </url>
+
+  <!-- La Rassegna -->
+  <url>
+    <loc>https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html</loc>
+  </url>
+
+  <!-- Comuni partecipanti -->
+  <url>
+    <loc>https://rassegnasosb.it/comuni-partecipanti-rassegna-senza-orario-senza-bandiera.html</loc>
+  </url>
+
+  <!-- Programma 2026 -->
+  <url>
+    <loc>https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera-2026.html</loc>
+  </url>
+
+  <!-- Archivio -->
+  <url>
+    <loc>https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html</loc>
+  </url>
+
+  <!-- Contatti -->
+  <url>
+    <loc>https://rassegnasosb.it/contatti-rassegna-senza-orario-senza-bandiera.html</loc>
+  </url>
+
+  <!-- Rassegna stampa -->
+  <url>
+    <loc>https://rassegnasosb.it/rassegna-stampa.html</loc>
+  </url>
+
+</urlset>
