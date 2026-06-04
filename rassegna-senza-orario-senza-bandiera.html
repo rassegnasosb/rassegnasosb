@@ -1,15 +1,135 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Rassegna – Senza Orario Senza Bandiera</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSS principale -->
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Font poetico -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Rassegna Senza Orario Senza Bandiera – Cinema, Teatro e Cultura in Veneto</title>
+
+  <meta name="description" content="Rassegna Senza Orario Senza Bandiera è un progetto culturale diffuso nella pedemontana vicentina che unisce cinema, teatro, musica e viaggi. Ideata da Nerio Brian, promuove cultura e territorio in Veneto.">
+
+  <link rel="canonical" href="https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html">
+  <meta property="og:title" content="Rassegna Senza Orario Senza Bandiera – Cultura, Cinema e Viaggi in Veneto">
+  <meta property="og:description" content="Cinema, teatro, musica e cultura diffusa nella pedemontana vicentina. Un progetto ideato da Nerio Brian.">
+  <meta property="og:image" content="https://rassegnasosb.it/open.png">
+  <meta property="og:image:alt" content="Rassegna Senza Orario Senza Bandiera - Cultura in Veneto">
+  <meta property="og:site_name" content="Rassegna Senza Orario Senza Bandiera">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rassegna Senza Orario Senza Bandiera">
+  <meta name="twitter:description" content="Cultura diffusa tra cinema, teatro, musica e territorio in Veneto.">
+  <meta name="twitter:image" content="https://rassegnasosb.it/open.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://rassegnasosb.it/#organization",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "url": "https://rassegnasosb.it/",
+      "description": "Rassegna culturale diffusa nella pedemontana vicentina che promuove cinema, teatro, musica, incontri e cultura sul territorio.",
+      "email": "progetti@dedalofurioso.it",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Pedemontana Vicentina, Veneto, Italia"
+      },
+      "keywords": "cinema, teatro, musica, cultura, eventi, Veneto, pedemontana vicentina, viaggi culturali",
+      "founder": {
+        "@type": "Person",
+        "name": "Nerio Brian"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/img/logo-sosb-2026.svg"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rassegnasosb/?locale=it_IT"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://rassegnasosb.it/#website",
+      "url": "https://rassegnasosb.it/",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "publisher": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html#webpage",
+      "url": "https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html",
+      "name": "Rassegna Senza Orario Senza Bandiera – Cinema, Viaggi e Cultura in Veneto",
+      "description": "Pagina ufficiale della Rassegna Senza Orario Senza Bandiera: progetto culturale tra cinema, teatro, musica e viaggi nella pedemontana vicentina.",
+      "isPartOf": {
+        "@id": "https://rassegnasosb.it/#website"
+      },
+      "about": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/open.png"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "CreativeWorkSeries",
+      "@id": "https://rassegnasosb.it/#series",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "description": "Rassegna culturale itinerante annuale tra cinema, teatro, musica e incontri nella pedemontana vicentina.",
+      "creator": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rassegnasosb.it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "La Rassegna",
+          "item": "https://rassegnasosb.it/rassegna-senza-orario-senza-bandiera.html"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
 </head>
 
 <body>
