@@ -1,14 +1,133 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Archivio | Rassegna Senza Orario Senza Bandiera</title>
-    <meta name="description" content="Archivio delle edizioni della Rassegna Senza Orario Senza Bandiera dal 2004 a oggi. Un viaggio tra cinema, teatro e cultura nei territori.">
+  <link rel="stylesheet" href="styles.css">
 
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Archivio Rassegna – Rassegna Senza Orario Senza Bandiera | Eventi e Programmi</title>
+
+  <meta name="description" content="Archivio della Rassegna Senza Orario Senza Bandiera: raccolta di eventi, proiezioni, incontri e attività culturali nella pedemontana vicentina e in Veneto.">
+
+  <link rel="canonical" href="https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html">
+  <meta property="og:title" content="Archivio Rassegna – Rassegna Senza Orario Senza Bandiera">
+  <meta property="og:description" content="Archivio eventi e attività della Rassegna Senza Orario Senza Bandiera tra cinema, teatro e cultura in Veneto.">
+  <meta property="og:image" content="https://rassegnasosb.it/open.png">
+  <meta property="og:image:alt" content="Archivio Rassegna Senza Orario Senza Bandiera">
+  <meta property="og:site_name" content="Rassegna Senza Orario Senza Bandiera">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Archivio Rassegna – SOSB">
+  <meta name="twitter:description" content="Archivio eventi della Rassegna Senza Orario Senza Bandiera in Veneto.">
+  <meta name="twitter:image" content="https://rassegnasosb.it/open.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://rassegnasosb.it/#organization",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "url": "https://rassegnasosb.it/",
+      "description": "Rassegna culturale diffusa nella pedemontana vicentina che promuove cinema, teatro, musica e cultura sul territorio.",
+      "email": "progetti@dedalofurioso.it",
+      "founder": {
+        "@type": "Person",
+        "name": "Nerio Brian"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/img/logo-sosb-2026.svg"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rassegnasosb/?locale=it_IT"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://rassegnasosb.it/#website",
+      "url": "https://rassegnasosb.it/",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "publisher": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html#webpage",
+      "url": "https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html",
+      "name": "Archivio della Rassegna – Rassegna Senza Orario Senza Bandiera",
+      "description": "Archivio degli eventi, proiezioni, incontri e attività della Rassegna Senza Orario Senza Bandiera nella pedemontana vicentina e in Veneto.",
+      "isPartOf": {
+        "@id": "https://rassegnasosb.it/#website"
+      },
+      "about": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/open.png"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "CollectionPage",
+      "@id": "https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html#archivio",
+      "name": "Archivio Rassegna SOSB",
+      "description": "Raccolta degli eventi e delle attività culturali della Rassegna Senza Orario Senza Bandiera.",
+      "isPartOf": {
+        "@id": "https://rassegnasosb.it/#website"
+      },
+      "about": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rassegnasosb.it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Archivio",
+          "item": "https://rassegnasosb.it/archivio-rassegna-senza-orario-senza-bandiera.html"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
 </head>
 
 <body>
