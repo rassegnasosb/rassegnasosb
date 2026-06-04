@@ -6,34 +6,128 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <title>Rassegna Stampa – Senza Orario Senza Bandiera</title>
+  <title>Rassegna Stampa – Rassegna Senza Orario Senza Bandiera | Articoli e Media</title>
 
-  <meta name="description" content="Rassegna stampa della Rassegna Senza Orario Senza Bandiera: articoli, citazioni e copertura su giornali, istituzioni e media locali del Veneto.">
+  <meta name="description" content="Rassegna stampa della Rassegna Senza Orario Senza Bandiera: articoli, interviste e citazioni sui media dedicati al progetto culturale nella pedemontana vicentina.">
 
   <link rel="canonical" href="https://rassegnasosb.it/rassegna-stampa.html">
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rassegnasosb.it/rassegna-stampa.html">
-  <meta property="og:title" content="Rassegna Stampa – Senza Orario Senza Bandiera">
-  <meta property="og:description" content="Articoli e citazioni sui media locali e istituzionali del progetto culturale.">
-  <meta property="og:image" content="https://rassegnasosb.it/open.png">
-
+  <!-- Robots -->
   <meta name="robots" content="index, follow">
 
-  <!-- SCHEMA.ORG -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Rassegna Stampa",
-    "description": "Articoli e citazioni sui media locali e istituzionali della Rassegna Senza Orario Senza Bandiera.",
-    "url": "https://rassegnasosb.it/rassegna-stampa.html",
-    "about": {
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rassegnasosb.it/rassegna-stampa.html">
+  <meta property="og:title" content="Rassegna Stampa – Rassegna Senza Orario Senza Bandiera">
+  <meta property="og:description" content="Articoli, interviste e media dedicati alla Rassegna Senza Orario Senza Bandiera.">
+  <meta property="og:image" content="https://rassegnasosb.it/open.png">
+  <meta property="og:image:alt" content="Rassegna Senza Orario Senza Bandiera - Rassegna stampa">
+  <meta property="og:site_name" content="Rassegna Senza Orario Senza Bandiera">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rassegna Stampa – SOSB">
+  <meta name="twitter:description" content="Articoli, interviste e citazioni sui media della Rassegna Senza Orario Senza Bandiera.">
+  <meta name="twitter:image" content="https://rassegnasosb.it/open.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
       "@type": "Organization",
-      "name": "Rassegna Senza Orario Senza Bandiera"
+      "@id": "https://rassegnasosb.it/#organization",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "url": "https://rassegnasosb.it/",
+      "description": "Rassegna culturale diffusa nella pedemontana vicentina che promuove cinema, teatro, musica, incontri e cultura sul territorio.",
+      "email": "progetti@dedalofurioso.it",
+      "founder": {
+        "@type": "Person",
+        "name": "Nerio Brian"
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/img/logo-sosb-2026.svg"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rassegnasosb/?locale=it_IT"
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://rassegnasosb.it/#website",
+      "url": "https://rassegnasosb.it/",
+      "name": "Rassegna Senza Orario Senza Bandiera",
+      "publisher": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://rassegnasosb.it/rassegna-stampa.html#webpage",
+      "url": "https://rassegnasosb.it/rassegna-stampa.html",
+      "name": "Rassegna Stampa – Rassegna Senza Orario Senza Bandiera",
+      "description": "Raccolta di articoli, interviste e citazioni sui media dedicate alla Rassegna Senza Orario Senza Bandiera e alle sue attività culturali.",
+      "isPartOf": {
+        "@id": "https://rassegnasosb.it/#website"
+      },
+      "about": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://rassegnasosb.it/open.png"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "CollectionPage",
+      "@id": "https://rassegnasosb.it/rassegna-stampa.html#collection",
+      "name": "Rassegna Stampa SOSB",
+      "description": "Collezione di articoli, media e interviste sulla Rassegna Senza Orario Senza Bandiera.",
+      "isPartOf": {
+        "@id": "https://rassegnasosb.it/#website"
+      },
+      "about": {
+        "@id": "https://rassegnasosb.it/#organization"
+      },
+      "inLanguage": "it-IT"
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rassegnasosb.it/rassegna-stampa.html#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rassegnasosb.it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rassegna Stampa",
+          "item": "https://rassegnasosb.it/rassegna-stampa.html"
+        }
+      ]
     }
-  }
-  </script>
+
+  ]
+}
+</script>
 
 </head>
 
