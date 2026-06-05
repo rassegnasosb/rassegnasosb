@@ -1188,3 +1188,20 @@ body.menu-open {
     margin-top: 30px;
   }
 }
+
+/* LOGO MENU CENTRATURA */
+.menu-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-logo img {
+    display: block;
+}
+
+.menu-logo img {
+    margin-bottom: 0;
+}
+
+
