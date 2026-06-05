@@ -1183,3 +1183,8 @@ body.menu-open {
   }
 }
 
+@media (max-width: 768px) {
+  #la-rassegna h2:first-child {
+    margin-top: 30px;
+  }
+}
