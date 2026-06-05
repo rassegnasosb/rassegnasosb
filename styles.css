@@ -328,7 +328,6 @@ body.menu-open {
     width: 120px;
     height: auto;
     max-width: 60%;
-    margin-bottom: 1.5rem;
     object-fit: contain;
 }
 
@@ -1204,4 +1203,7 @@ body.menu-open {
     margin-bottom: 0;
 }
 
-
+/* FOTO NERIO */
+.nerio {
+    margin-top: 30px;
+}
