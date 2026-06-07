@@ -104,7 +104,10 @@
 
 <div class="container">
 
-  <button onclick="toggleLang()">EN / IT</button>
+  <div class="lang">
+  <button onclick="setLang('it')">🇮🇹 Italiano</button>
+  <button onclick="setLang('en')">🇬🇧 English</button>
+</div>
 
   <div class="box">
 
@@ -126,7 +129,7 @@
       <h2>Titolare del trattamento</h2>
 
       <p class="small">
-        Dedalo Furioso<br>
+        Dedalofurioso Società Cooperativa<br>
         Via San Francesco 24, Dueville (VI)<br>
         P.IVA / C.F. / Registro Imprese Vicenza: 03072080249<br>
         Telefono: 0444 040716<br>
@@ -207,29 +210,58 @@
     </div>
 
   </div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <a
+      id="backBtn"
+      href="https://rassegnasosb.it/"
+      style="
+        display:inline-block;
+        padding:0.9rem 1.6rem;
+        background:#2f6fa3;
+        color:white;
+        text-decoration:none;
+        font-weight:600;
+        border-radius:999px;
+      ">
+      ← Torna al sito
+    </a>
+  </div>
+
 </div>
 
-<footer>
-  <p>© 2026 Rassegna Senza Orario Senza Bandiera</p>
-  <a href="https://rassegnasosb.it/">Torna al sito</a>
-</footer>
-
 <script>
-function toggleLang() {
+function setLang(lang) {
+
   const it = document.getElementById("it");
   const en = document.getElementById("en");
   const title = document.getElementById("title");
+  const backBtn = document.getElementById("backBtn");
 
-  const isIt = it.style.display !== "none";
+  if (lang === "it") {
 
-  it.style.display = isIt ? "none" : "block";
-  en.style.display = isIt ? "block" : "none";
+    it.style.display = "block";
+    en.style.display = "none";
 
-  title.innerText = isIt
-    ? "Privacy Policy"
-    : "Informativa Privacy";
+    title.textContent = "Informativa Privacy";
+
+    backBtn.textContent = "← Torna al sito";
+
+  } else {
+
+    it.style.display = "none";
+    en.style.display = "block";
+
+    title.textContent = "Privacy Policy";
+
+    backBtn.textContent = "← Back to website";
+
+  }
 }
+
+setLang("it");
 </script>
 
 </body>
 </html>
+
