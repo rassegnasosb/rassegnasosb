@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("modal-close");
     const buttons = document.querySelectorAll(".evento-btn");
 
+    if (!modal || !closeBtn) return;
+
     // ACCESSIBILITÀ: aria-label dinamico per screen reader
     buttons.forEach(btn => {
         const title = btn.dataset.title;
