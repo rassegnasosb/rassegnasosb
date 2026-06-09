@@ -1207,3 +1207,14 @@ body.menu-open {
 .nerio {
     margin-top: 30px;
 }
+
+/* MESI */
+.mese-separatore {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: var(--blu-profondo);
+    position: relative;
+}
