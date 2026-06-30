@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalText = document.getElementById("modal-text");
     const modalDate = document.getElementById("modal-date");
     const modalLocation = document.getElementById("modal-location");
+    const shareBtn = document.getElementById("share-whatsapp");
     const closeBtn = document.getElementById("modal-close");
     const buttons = document.querySelectorAll(".evento-btn");
 
@@ -158,6 +159,26 @@ document.addEventListener("DOMContentLoaded", () => {
         modalLocation.textContent = location ? location.textContent.trim() : "";
 
         document.body.classList.add("menu-open");
+
+shareBtn.onclick = () => {
+
+    const testo =
+`Ti consiglio questo evento della Rassegna Senza Orario Senza Bandiera:
+
+🎭 ${btn.dataset.title}
+
+📅 ${btn.dataset.date}
+
+📍 ${modalLocation.textContent}
+
+${window.location.href}`;
+
+    window.open(
+        "https://wa.me/?text=" + encodeURIComponent(testo),
+        "_blank"
+    );
+
+};
 
         // focus dentro modal
         setTimeout(() => {
