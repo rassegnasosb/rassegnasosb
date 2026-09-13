@@ -1218,3 +1218,38 @@ body.menu-open {
     color: var(--blu-profondo);
     position: relative;
 }
+
+/* PROVA WHATSAPP */
+/* CTA CANALE WHATSAPP */
+.whatsapp-cta {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.whatsapp-cta p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cta-whatsapp {
+    display: inline-block;
+    padding: 0.9rem 1.5rem;
+    background-color: #25D366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-2px);
+}
+
+.cta-whatsapp:focus-visible {
+    outline: 3px solid #128C7E;
+    outline-offset: 4px;
+}
