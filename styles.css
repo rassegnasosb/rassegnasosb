@@ -468,7 +468,10 @@ section h2 {
   font-weight: 700;
 }
 
-/* 7. PROGRAMMA E CARD EVENTI */
+/* =========================================================
+   7. PROGRAMMA E CARD EVENTI
+   ========================================================= */
+
 #programma-2026 {
   max-width: none;
   width: 100%;
@@ -517,6 +520,8 @@ section h2 {
   content: "";
 }
 
+/* CARD EVENTO */
+
 .evento-box {
   display: flex;
   flex-direction: column;
@@ -537,15 +542,22 @@ section h2 {
   box-shadow: var(--ombra-card);
 }
 
+/* LOCANDINA NELL'ELENCO EVENTI
+   Ritagliata per uniformare tutte le card */
+
 .evento-img {
+  display: block;
   width: 100%;
+  height: 220px;
   aspect-ratio: 16 / 9;
-  height: auto;
   margin: 0 0 .2rem;
   border-radius: 12px;
   background: #e6e0d6;
   object-fit: cover;
+  object-position: center;
 }
+
+/* DATA EVENTO */
 
 .evento-data {
   display: inline-flex;
@@ -564,6 +576,8 @@ section h2 {
   text-transform: uppercase;
 }
 
+/* TITOLO EVENTO */
+
 .evento-titolo {
   margin: .1rem 0 0;
   color: var(--blu-notte);
@@ -573,6 +587,8 @@ section h2 {
   line-height: 1.2;
   text-wrap: balance;
 }
+
+/* LUOGO EVENTO */
 
 .evento-location {
   display: inline-flex;
@@ -596,12 +612,23 @@ section h2 {
   line-height: 1.45;
 }
 
+/* ANTEPRIMA DESCRIZIONE EVENTI
+   Mostra solo le prime 4 righe */
+
 .evento-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
   margin: 0;
   color: #4b585c;
   font-size: .94rem;
   line-height: 1.7;
+  text-overflow: ellipsis;
 }
+
+/* PULSANTE SCOPRI DI PIÙ */
 
 .evento-btn {
   display: inline-flex;
@@ -625,6 +652,29 @@ section h2 {
   border-color: var(--blu-notte);
   background: var(--blu-notte);
   color: #fff;
+}
+
+/* LOCANDINA COMPLETA NEL POPUP */
+
+#modal-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #f0ece3;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* GRIGLIA DESKTOP */
+
+@media (min-width: 760px) {
+  .programma-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
 }
 
 /* 8. ARCHIVIO E STEMMI */
@@ -1238,3 +1288,86 @@ footer img {
     font-size: 1.45rem;
   }
 }
+
+/* PULSANTE */
+
+/* =========================================================
+   15. CORREZIONI FINALI EVENTI
+   Immagini intere, anteprime ridotte e pulsanti
+   ========================================================= */
+
+.evento-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.evento-desc {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  margin: 0;
+  color: #4b585c;
+  font-size: .94rem;
+  line-height: 1.7;
+  text-overflow: ellipsis;
+}
+
+.evento-btn {
+  margin-top: auto;
+  min-height: 44px;
+  padding: .7rem 1.2rem;
+  border-radius: 999px;
+  background: var(--blu-petrolio);
+  color: #fff;
+  font-weight: 750;
+}
+
+.evento-btn:hover {
+  transform: translateY(-2px);
+  background: var(--blu-notte);
+  color: #fff;
+}
+
+/* PROVA PAGINA EVENTI */
+/* =========================================================
+   CORREZIONE DEFINITIVA IMMAGINI EVENTI
+   Da inserire alla FINE ASSOLUTA del foglio CSS
+   ========================================================= */
+
+/* 1. ELENCO EVENTI: LOCANDINA RITAGLIATA */
+
+#programma-2026 .evento-box img.evento-img {
+  display: block !important;
+  width: 100% !important;
+  height: 220px !important;
+  min-height: 220px !important;
+  max-height: 220px !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  overflow: hidden !important;
+  border-radius: 12px;
+}
+
+/* 2. POPUP: LOCANDINA INTERA */
+
+#modal-img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  overflow: visible !important;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
